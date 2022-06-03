@@ -1,0 +1,1401 @@
+-> JavaScript is a popular programming language that has a wide range of applications.
+-> JavaScript was previously used mainly for making webpages interactive such as form validation, animation, etc. 
+
+-> Nowadays, JavaScript is also used in many other areas such as server-side development, mobile app development and so on.
+
+
+
+-> Because of its wide range of applications, you can run JavaScript in several ways:
+• Using console tab of web browsers
+• Using Node.js
+• By creating web pages
+
+
+
+1. Using Console Tab of Web Browsers
+-> All the popular web browsers have built-in JavaScript engines. 
+
+-> Hence, you can run JavaScript on a browser. 
+
+To run JavaScript on a browser,
+1. Open your favorite browser (here we will use Google Chrome).
+2. Open the developer tools by right clicking on an empty area and select Inspect. Shortcut: F12.
+3. On the developer tools, go to the console tab. Then, write JavaScript code and press enter to run the code.
+
+
+
+
+2. Using Node.js
+-> Node is a back-end run-time environment for executing JavaScript code. 
+
+-> To run JS using Node.js, follow these steps:
+1. Install the latest version of Node.js.
+2. Install an IDE/Text Editor like Visual Studio Code. In VS code, create a file > write JS code > save it with .js extension.
+3. Open up the terminal/command prompt > navigate to the file location > type node hello.js > hit enter.
+4. You will get output on the terminal.
+
+
+
+Note: It is also possible to run JavaScript on the terminal/command prompt directly. 
+For that, simply type node and press enter. Then you can start writing JS code
+
+
+
+
+3. By Creating Web Pages
+
+-> JavaScript was initially created to make web pages interactive, that's why JavaScript and HTML go hand in hand. 
+
+To run JS from a webpage, follow these steps:
+
+1. Open VS Code > Go to File > New File > Save it with .html extension. 
+For example, main.html.
+
+2. Copy this doctype (minimum valid HTML code) and save it in the file.
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+<title>Programiz</title>
+</head>
+<body>
+ <script src=""></script>
+</body>
+</html>
+
+3. Similarly create a JS file, write the following JS code and save it with .js
+extension like main.js.
+console.log('hello world');
+
+4. From inside the HTML file, we need to link the main.js file to use it. You 
+can achieve that by adding the following code in main.html.
+<script scr="main.js"></script>
+
+5. Open the main.html file using a browser.
+
+6. To check if our JS code ran or not, Right click on the web page > Inspect > Choose console tab
+
+
+
+
+JavaScript Variables and Constants:
+
+JavaScript Variables:
+
+-> In programming, a variable is a container (storage area) to hold data. 
+
+For example,
+let num = 5;
+Here, num is a variable. It's storing 5.
+
+
+
+
+JavaScript Declare Variables:
+
+-> In JavaScript, we use either var or let keyword to declare variables. 
+
+For example,
+var x;
+let y;
+Here, x and y are variables.
+
+
+
+
+JavaScript var Vs let:
+
+-> Both var and let are used to declare variables. 
+-> However, there are some differences between them.
+
+
+-> var is used in the older versions of JavaScript
+    let is the new way of declaring variables starting ES6 (ES2015).
+
+-> var is function scoped
+    let is block scoped. 
+
+-> For example, var x; 
+    For example, let y;
+
+
+
+Notes: 
+-> It is recommended we use let instead of var. 
+-> However, there are a few browsers that do not support let.
+
+
+
+
+JavaScript Initialize Variables:
+
+-> We use the assignment operator = to assign a value to a variable.
+let x;
+x = 5;
+Here, 5 is assigned to variable x.
+
+
+-> You can also initialize variables during its declaration.
+let x = 5;
+let y = 6;
+
+
+-> In JavaScript, it's possible to declare variables in a single statement.
+let x = 5, y = 6, z = 7;
+
+
+-> If you use a variable without initializing it, it will have an undefined value.
+let x; // x is the name of the variable
+console.log(x); // undefined
+Here x is the variable name and since it does not contain any value, it will be undefined.
+
+
+
+
+Change the Value of Variables:
+
+-> It's possible to change the value stored in the variable. 
+
+For example,
+// 5 is assigned to variable x
+let x = 5; 
+console.log(x); // 5
+
+// vaue of variable x is changed
+x = 3; 
+console.log(x); // 3
+
+
+
+Notes:
+-> The value of a variable may vary. 
+-> Hence, the name variable.
+
+
+
+
+Rules for Naming JavaScript Variables:
+
+The rules for naming variables are:
+
+1. Variable names must start with either a letter, an underscore _, or the dollar sign $. 
+
+For example, 
+//valid
+let a = 'hello';
+let _a = 'hello';
+let $a = 'hello';
+
+
+
+2. Variable names cannot start with numbers.
+
+For example, 
+//invalid
+Let 1a = 'hello'; // this gives an error
+
+
+
+3. JavaScript is case-sensitive. So y and Y are different variables. 
+
+For example, 
+let y = "hi";
+let Y = 5;
+console.log(y); // hi
+console.log(Y); // 5
+
+
+
+4. Keywords cannot be used as variable names. 
+
+For example, 
+//invalid
+let new = 5; // Error! new is a keyword.
+
+
+
+Notes:
+• Though you can name variables in any way you want, it's a good practice to give a descriptive variable name. 
+        If you are using a variable to store the number of apples, it better to use apples or numberOfApples rather than x or n.
+• In JavaScript, the variable names are generally written in camelCase if it has multiple words. 
+        For example, firstName, annualSalary, etc.
+
+
+
+
+JavaScript Constants:
+
+-> The const keyword was also introduced in the ES6(ES2015) version to create constants. 
+
+For example,
+const x = 5;
+
+-> Once a constant is initialized, we cannot change its value.
+const x = 5;
+x = 10; // Error! constant cannot be changed.
+console.log(x)
+
+-> Simply, a constant is a type of variable whose value cannot be changed.
+-> Also, you cannot declare a constant without initializing it. 
+
+For example,
+const x; // Error! Missing initializer in const declaration.
+x = 5;
+console.log(x)
+
+
+Notes: 
+-> If you are sure that the value of a variable won't change throughout the program, it's recommended to use const. 
+-> However, there are a few browsers that do not support const.
+
+
+
+
+JavaScript console.log():
+
+-> All modern browsers have a web console for debugging. 
+
+-> The console.log() method is used to write messages to these consoles. 
+
+For example,
+let sum = 44;
+console.log(sum); // 44
+
+-> When you run the above code, 44 is printed on the console.
+
+
+-> console.log() Syntax:
+
+Its syntax is:
+console.log(message);
+Here, the message refers to either a variable or a value.
+
+
+Notes: 
+-> We will be using the console.log() method to display the output in our upcoming lessons.
+
+
+Example 1: Print a Sentence
+// program to print a sentence
+// passing string
+console.log("I love JS");
+
+Output:
+I love JS
+
+
+
+Example 2: Print Values Stored in Variables
+// program to print variables values
+// storing values
+const greet = 'Hello';
+const name = 'Jack';
+console.log(greet + ' ' + name);
+
+Output:
+Hello Jack
+
+
+
+
+-> As you can see from these examples, console.log() makes it easier to see the value inside a variable. 
+
+-> That's why it's commonly used for testing/debugging code.
+-> The console object also has various methods other than console.log().
+
+
+
+
+JavaScript Data Types:
+
+There are different types of data that we can use in a JavaScript program. 
+
+For example,
+const x = 5;
+const y = "Hello";
+Here,
+• 5 is an integer data.
+• "Hello" is a string data.
+
+
+
+
+JavaScript Data Types:
+
+-> There are eight basic data types in JavaScript. 
+
+They are:
+Data Types            Description                                           Example
+String                represents textual data                              'hello', "hello world!" etc
+Number                an integer or a floating-point number                 3, 3.234, 3e-2 etc.
+BigInt                an integer with arbitrary precision                   900719925124740999n , 1n etc.
+Boolean               Any of two values: true or false                      true and false
+undefined             a data type whose variable is not initialized         let a;
+null                  denotes a null value                                  let a = null;
+Symbol                data type whose instances are unique and immutable    let value = Symbol('hello');
+Object                key-value pairs of collection of data                 let student = { };
+
+
+-> Here, all data types except Object are primitive data types, whereas Object is non-primitive.
+
+
+Notea: 
+-> The Object data type (non-primitive type) can store collections of data, whereas primitive data type can only store a single data.
+
+
+
+
+JavaScript String:
+
+-> String is used to store text. 
+
+-> In JavaScript, strings are surrounded by quotes:
+• Single quotes: 'Hello'
+• Double quotes: "Hello"
+• Backticks: `Hello`
+
+For example,
+//strings example
+const name = 'ram';
+const name1 = "hari";
+const result = `The names are ${name} and ${name1}`;
+
+
+
+-> Single quotes and double quotes are practically the same and you can use either of them.
+
+
+-> Backticks are generally used when you need to include variables or expressions into a string. 
+-> This is done by wrapping variables or expressions with ${variable or expression} as shown above.
+
+
+
+
+JavaScript Number:
+
+-> Number represents integer and floating numbers (decimals and exponentials). 
+
+For example,
+const number1 = 3;
+const number2 = 3.433;
+const number3 = 3e5 // 3 * 10^5
+
+-> A number type can also be +Infinity, -Infinity, and NaN (not a number). 
+
+For example,
+const number1 = 3/0;
+console.log(number1); // Infinity
+const number2 = -3/0;
+console.log(number2); // -Infinity
+
+
+// strings can't be divided by numbers
+const number3 = "abc"/3; 
+console.log(number3); // NaN
+
+
+
+JavaScript BigInt:
+
+-> In JavaScript, Number type can only represent numbers less than (2^53 - 1) and more than -(2^53 - 1). 
+-> However, if you need to use a larger number than that, you can use the BigInt data type.
+
+
+-> A BigInt number is created by appending n to the end of an integer. 
+
+For example,
+// BigInt value
+const value1 = 900719925124740998n;
+
+// Adding two big integers
+const result1 = value1 + 1n;
+console.log(result1); // "900719925124740999n"
+const value2 = 900719925124740998n;
+
+// Error! BitInt and number cannot be added
+const result2 = value2 + 1; 
+console.log(result2); 
+Output:
+900719925124740999n
+
+Uncaught TypeError: Cannot mix BigInt and other types
+
+
+Note: 
+-> BigInt was introduced in the newer version of JavaScript and is not supported by many browsers including Safari. 
+
+
+
+
+JavaScript Boolean:
+
+-> This data type represents logical entities.
+
+Boolean represents one of two values: true or false. 
+
+It is easier to think of it as a yes/no switch. 
+For example,
+const dataChecked = true;
+const valueCounted = false;
+
+
+
+
+JavaScript undefined:
+
+-> The undefined data type represents value that is not assigned. 
+-> If a variable is declared but the value is not assigned, then the value of that variable will be undefined. 
+
+For example,
+let name;
+console.log(name); // undefined
+
+-> It is also possible to explicitly assign a variable value undefined. 
+
+For example,
+let name = undefined;
+console.log(name); // undefined
+
+Notes: 
+-> It is recommended not to explicitly assign undefined to a variable. 
+-> Usually, null is used to assign 'unknown' or 'empty' value to a variable.
+
+
+
+
+JavaScript null:
+
+-> In JavaScript, null is a special value that represents empty or unknown value. 
+
+For example,
+const number = null;
+
+-> The code above suggests that the number variable is empty.
+
+Notes: null is not the same as NULL or Null.
+
+
+
+
+JavaScript Symbol:
+
+-> This data type was introduced in a newer version of JavaScript (from ES2015).
+-> A value having the data type Symbol can be referred to as a symbol value. 
+
+-> Symbol is an immutable primitive value that is unique. 
+
+For example,
+// two symbols with the same description
+const value1 = Symbol('hello');
+const value2 = Symbol('hello');
+
+-> Though value1 and value2 both contain 'hello', they are different as they are of the Symbol type.
+
+
+
+
+JavaScript Object:
+
+-> An object is a complex data type that allows us to store collections of data. 
+
+For example,
+const student = {
+ firstName: 'ram',
+ lastName: null,
+ class: 10
+}
+
+
+
+
+JavaScript Type:
+
+-> JavaScript is a dynamically typed (loosely typed) language. 
+-> JavaScript automatically determines the variables' data type for you.
+
+-> It also means that a variable can be of one data type and later it can be changed to another data type. 
+
+For example,
+// data is of undefined type
+let data;
+
+// data is of integer type
+data = 5;
+
+// data is of string type
+data = "JavaScript Programming";
+
+
+
+
+JavaScript typeof:
+
+-> To find the type of a variable, you can use the typeof operator. 
+
+
+For example,
+
+const name = 'ram';
+typeof(name); // returns "string"
+
+const number = 4;
+typeof(number); //returns "number"
+
+const valueChecked = true;
+typeof(valueChecked); //returns "boolean"
+
+const a = null;
+typeof(a); // returns "object"
+
+
+-> Notice that typeof returned "object" for the null type. 
+-> This is a known issue in JavaScript since its first release.
+
+
+
+
+JavaScript Operators:
+
+What is an Operator?
+-> In JavaScript, an operator is a special symbol used to perform operations on operands (values and variables). 
+
+For example,
+2 + 3; // 5
+
+Here + is an operator that performs addition, and 2 and 3 are operands.
+
+
+
+JavaScript Operator Types:
+-> There are many operator perform in JavaScipt:
+• Assignment Operators
+• Arithmetic Operators
+• Comparison Operators
+• Logical Operators
+• Bitwise Operators
+• String Operators
+• Other Operators
+
+
+
+
+
+JavaScript Assignment Operators:
+
+
+Assignment operators are used to assign values to variables. 
+
+For example,
+const x = 5;
+
+Here, the = operator is used to assign value 5 to variable x.
+
+Here's a list of commonly used assignment operators:
+Operator        Name                        Example
+=               Assignment operator         a = 7; // 7
++=              Addition assignment         a += 5; // a = a + 5
+-=              Subtraction Assignment      a -= 2; // a = a - 2
+*=              Multiplication Assignment   a *= 3; // a = a * 3
+/=              Division Assignment         a /= 2; // a = a / 2
+%=              Remainder Assignment        a %= 2; // a = a % 2
+**=             Exponentiation Assignment   a **= 2; // a = a**2
+
+
+
+
+JavaScript Arithmetic Operators:
+
+-> Arithmetic operators are used to perform arithmetic calculations. 
+
+For example,
+const number = 3 + 5; // 8
+Here, the + operator is used to add two operands.
+
+
+Operator      Name                            Example
++             Addition                        x + y
+-             Subtraction                     x - y
+*             Multiplication                  x * y
+/             Division                        x / y
+%             Remainder                       x % y
+++            Increment (increments by 1)     ++x or x++
+--            Decrement (decrements by 1)     --x or x--
+**            Exponentiation (Power)          x ** y
+
+
+
+
+Example 1: Arithmetic operators in JavaScript
+let x = 5;
+let y = 3;
+
+// addition
+console.log('x + y = ', x + y); // 8
+
+// subtraction
+console.log('x - y = ', x - y); // 2
+
+// multiplication
+console.log('x * y = ', x * y); // 15
+
+// division
+console.log('x / y = ', x / y); // 1.6666666666666667
+
+// remainder
+console.log('x % y = ', x % y); // 2
+
+// increment
+console.log('++x = ', ++x); // x is now 6
+console.log('x++ = ', x++); // prints 6 and then increased to 7
+console.log('x = ', x); // 7
+
+// decrement
+console.log('--x = ', --x); // x is now 6
+console.log('x-- = ', x--); // prints 6 and then decreased to 5
+console.log('x = ', x); // 5
+
+//exponentiation
+console.log('x ** y =', x ** y);
+
+
+Notes: 
+-> The ** operator was introduced in ECMAScript 2016 and some browsers may not support them. 
+
+-> JavaScript Comparison OperatorsComparison operators compare two values and return a boolean value, either true or false. 
+
+For example,
+const a = 3, b = 2;
+console.log(a > b); // true 
+
+
+-> Here, the comparison operator > is used to compare whether a is greater than b.
+
+
+Operator          Description                                                                                         Example
+==                Equal to: returns true if the operands are equal                                                    x == y 
+!=                Not equal to: returns true if the operands are not equal                                            x != y
+===               Strict equal to: true if the operands are equal and of the same type                                x === y
+!==               Strict not equal to: true if the operands are equal but of different type or not equal at all       x !== y
+>                 Greater than: true if left operand is greater than the right operand                                x > y
+>=                Greater than or equal to: true if left operand is greater than or equal to the right operand        x >= y
+<                 Less than: true if the left operand is less than the right operand                                  x < y
+<=                Less than or equal to: true if the left operand is less than or equal to the right operand          x <= y
+
+
+
+
+Example 2: Comparison operators in JavaScript:
+
+// equal operator
+console.log(2 == 2); // true
+console.log(2 == '2'); // true
+
+// not equal operator
+console.log(3 != 2); // true
+console.log('hello' != 'Hello'); // true
+
+// strict equal operator
+console.log(2 === 2); // true
+console.log(2 === '2'); // false
+
+// strict not equal operator
+console.log(2 !== '2'); // true
+console.log(2 !== 2); // false
+
+
+-> Comparison operators are used in decision-making and loops
+
+
+
+
+JavaScript Logical Operators:
+
+-> Logical operators perform logical operations and return a boolean value, either true or false. 
+
+For example,
+const x = 5, y = 3;
+(x < 6) && (y < 5); // true
+
+-> Here, && is the logical operator AND. 
+
+Since both x < 6 and y < 5 are true, the result is true.
+
+
+
+
+Operator        Description                                                                             Example
+&&              Logical AND: true if both the operands are true, else returns false                     x && y
+||              Logical OR: true if either of the operands is true; returns false if both are false     x || y
+!               Logical NOT: true if the operand is false and vice-versa.                               !x
+
+
+
+
+Example 3: Logical Operators in JavaScript
+
+// logical AND
+console.log(true && true); // true
+console.log(true && false); // false
+
+// logical OR
+console.log(true || false); // true
+
+// logical NOT
+console.log(!true); // false
+
+Output:
+true
+false
+true
+false
+
+
+
+-> Logical operators are used in decision making and loops.
+
+
+JavaScript Bitwise Operators:
+-> Bitwise operators perform operations on binary representations of numbers.
+
+
+Operator       Description
+&              Bitwise AND
+|              Bitwise OR
+^              Bitwise XOR
+~              Bitwise NOT
+<<             Left shift
+>>             Sign-propagating right shift
+>>>            Zero-fill right shift
+
+
+
+
+
+JavaScript String Operators:
+
+-> In JavaScript, you can also use the + operator to concatenate (join) two or more strings.
+
+
+
+Example 4: String operators in JavaScript
+// concatenation operator
+console.log('hello' + 'world');
+let a = 'JavaScript';
+a += ' tutorial'; // a = a + ' tutorial';
+console.log(a);
+
+Output:
+helloworld
+JavaScript tutorial
+
+
+
+Note: When + is used with strings, it performs concatenation. 
+-> However, when + is used with numbers, it performs addition.
+
+
+
+Other JavaScript Operators:
+
+-> Here's a list of other operators available in JavaScript.
+
+
+
+Operator           Description                                                                Example
+,                  evaluates multiple operands and returns the value of the last operand.     let a = (1, 3 , 4); // 4
+?:                 returns value based on the condition                                       x(5 > 3) ? 'success' : 'error'; // "success"
+delete             deletes an object's property, or an element of an array                    delete x
+typeof             returns a string indicating the data type typeof 3;                        // "number"
+void               discards the expression's return value                                     void(x)
+in                 returns true if the specified property is in the object                    prop in object
+instanceof         returns true if the specified object is of of the specified object type    object instanceof object_type
+
+
+
+
+JavaScript Comments:
+
+-> JavaScript comments are hints that a programmer can add to make their code easier to read and understand. 
+-> They are completely ignored by JavaScript engines.
+
+
+There are two ways to add comments to code:
+• // - Single Line Comments
+• /* */ -Multi-line Comments
+
+
+
+
+Single Line Comments:
+
+-> In JavaScript, any line that starts with // is a single line comment. 
+
+For example,
+name = "Jack";
+
+// printing name on the console
+console.log("Hello " + name);
+
+-> Here, // printing name on the console is a comment.
+
+You can also use single line comment like this:
+
+name = "Jack";
+console.log("Hello " + name); // printing name on the console
+
+
+
+
+Multi-line Comments:
+
+-> In Javascript, any text between /* and */ is a multi-line comment. 
+
+For example,
+/* The following program contains the source code for a game 
+called Baghchal. 
+
+Baghchal is a popular board game in Nepal where two players 
+choose either sheep or tiger. It is played on a 5x5 grid.
+
+For the player controlling the tiger to win, they must capture 
+all the sheep. There are altogether 4 tigers on the board.
+
+For the sheep to win, all tigers must be surrounded and cornered 
+so that they cannot move. The player controlling the sheep has 
+20 sheep at his disposal.*/
+
+
+-> Since the rest of the source code will be used to implement the rules of the game, 
+          the comment above is a good example where you might use a multi-line comment.
+
+
+
+
+Using Comments for Debugging:
+
+-> Comments can also be used to disable code to prevent it from being executed. 
+
+For example,
+console.log("some code");
+console.log("Error code);
+console.log("other code");
+
+-> If you get an error while running the program, instead of removing the error-prone code, you can use comments to disable it from being executed; 
+
+this can be a valuable debugging tool.
+console.log("some code");
+// console.log("Error code);
+console.log("other code");
+
+
+Pro Tip: 
+-> Remember the shortcut for using comments; it can be really helpful. 
+-> For most code editors, it's Ctrl + / for Windows and Cmd + / for Mac.
+
+
+
+
+
+Make Code Easier to Understand:
+
+-> As a JavaScript developer, you will not only write code but may also have to modify code written by other developers.
+
+-> If you write comments on your code, it will be easier for you to understand the code in the future. 
+-> Also, it will be easier for your fellow developers to understand the code.
+
+-> As a general rule of thumb, use comments to explain why you did something rather than how you did something, and you are good.
+
+
+Notes: 
+-> Comments shouldn't be the substitute for a way to explain poorly written code in English. 
+-> You should always write well-structured and self-explanatory code. And, then use comments.
+
+
+
+
+JavaScript Type Conversions:
+
+-> The process of converting one data type to another data type is called type conversion. 
+
+There are two types of type conversion in JavaScript.
+• Implicit Conversion
+• Explicit Conversion
+
+
+
+
+JavaScript Implicit Conversion:
+
+-> In certain situations, JavaScript automatically converts one data type to another (to the right type). 
+-> This is known as implicit conversion.
+
+
+Example 1: Implicit Conversion to String
+// numeric string used with + gives string type
+
+let result;
+result = '3' + 2; 
+console.log(result) // "32"
+
+result = '3' + true; 
+console.log(result); // "3true"
+
+result = '3' + undefined; 
+console.log(result); // "3undefined"
+
+result = '3' + null; 
+console.log(result); // "3null"
+
+
+Notes: 
+-> When a number is added to a string, JavaScript converts the number to a string before concatenation.
+
+
+
+
+Example 2: Implicit Conversion to Number
+// numeric string used with - , / , * results number type
+
+let result;
+result = '4' - '2'; 
+console.log(result); // 2
+
+result = '4' - 2;
+console.log(result); // 2
+
+result = '4' * 2;
+console.log(result); // 8
+
+result = '4' / 2;
+console.log(result); // 2
+
+
+
+
+Example 3: Non-numeric String Results to NaN
+// non-numeric string used with +, - , / , * results to NaN
+
+let result;
+result = 'hello' - 'world';
+console.log(result); // NaN
+
+result = '4' - 'hello';
+console.log(result); // NaN
+
+
+
+
+Example 4: Implicit Boolean Conversion to Number
+// if boolean is used, true is 1, false is 0
+
+let result;
+result = '4' - true;
+console.log(result); // 3
+
+result = 4 + true;
+console.log(result); // 5
+
+result = 4 + false;
+console.log(result); // 4
+
+
+Notes: 
+-> JavaScript considers 0 as false and all non-zero number as true. 
+-> And, if true is converted to a number, the result is always 1.
+
+
+
+
+
+Example 5: null Conversion to Number
+
+// null is 0 when used with number
+
+let result;
+result = 4 + null;
+console.log(result); // 4
+
+result = 4 - null;
+console.log(result); // 4
+
+
+
+
+Example 6: undefined used with number, boolean or null
+// Arithmetic operation of undefined with number, boolean or null gives NaN
+
+let result;
+result = 4 + undefined;
+console.log(result); // NaN
+
+result = 4 - undefined;
+console.log(result); // NaN
+
+result = true + undefined;
+console.log(result); // NaN
+
+result = null + undefined;
+console.log(result); // NaN
+
+
+
+
+JavaScript Explicit Conversion:
+
+-> You can also convert one data type to another as per your needs. 
+-> The type conversion that you do manually is known as explicit type conversion.
+
+-> In JavaScript, explicit type conversions are done using built-in methods.
+
+
+Here are some common methods of explicit conversions.
+
+
+
+1. Convert to Number Explicitly
+To convert numeric strings and boolean values to numbers, you can use Number(). 
+
+For example,
+let result;
+// string to number
+result = Number('324');
+console.log(result); // 324
+
+result = Number('324e-1') 
+console.log(result); // 32.4
+
+
+// boolean to number
+result = Number(true);
+console.log(result); // 1
+
+result = Number(false);
+console.log(result); // 0
+
+-> In JavaScript, empty strings and null values return 0. 
+
+For example,
+let result;
+result = Number(null);
+console.log(result); // 0
+
+let result = Number(' ')
+console.log(result); // 0
+
+-> If a string is an invalid number, the result will be NaN. For example,
+
+let result;
+result = Number('hello');
+console.log(result); // NaN
+
+result = Number(undefined);
+console.log(result); // NaN
+
+result = Number(NaN);
+console.log(result); // NaN
+
+Notes: 
+-> You can also generate numbers from strings using parseInt(), parseFloat(), unary operator + and Math.floor(). 
+
+
+For example,
+
+let result;
+result = parseInt('20.01');
+console.log(result); // 20
+
+result = parseFloat('20.01');
+console.log(result); // 20.01
+
+result = +'20.01';
+console.log(result); // 20.01
+
+result = Math.floor('20.01');
+console.log(result); // 20
+
+
+
+
+
+2. Convert to String Explicitly
+To convert other data types to strings, you can use either String() or toString(). 
+
+For example,
+
+//number to string
+let result;
+result = String(324);
+console.log(result); // "324"
+
+result = String(2 + 4);
+console.log(result); // "6"
+
+//other data types to string
+result = String(null);
+console.log(result); // "null"
+
+result = String(undefined);
+console.log(result); // "undefined"
+
+result = String(NaN);
+console.log(result); // "NaN"
+
+result = String(true);
+console.log(result); // "true"
+
+result = String(false);
+console.log(result); // "false"
+
+
+// using toString()
+result = (324).toString();
+console.log(result); // "324"
+
+result = true.toString();
+console.log(result); // "true"
+
+
+Notes: 
+-> String() takes null and undefined and converts them to string. 
+-> However, toString() gives error when null are passed.
+
+
+
+
+3. Convert to Boolean Explicitly
+-> To convert other data types to a boolean, you can use Boolean().
+-> In JavaScript, undefined, null, 0, NaN, '' converts to false. 
+
+
+For example,
+let result;
+result = Boolean('');
+console.log(result); // false
+
+result = Boolean(0);
+console.log(result); // false
+
+result = Boolean(undefined);
+console.log(result); // false
+
+result = Boolean(null);
+console.log(result); // false
+
+result = Boolean(NaN);
+console.log(result); // false
+
+
+-> All other values give true. 
+
+For example,
+result = Boolean(324);
+console.log(result); // true
+
+result = Boolean('hello');
+console.log(result); // true
+
+result = Boolean(' ');
+console.log(result); // true
+
+
+
+
+JavaScript Type Conversion Table:
+
+-> The table shows the conversion of different values to String, Number, and Boolean in JavaScript.
+
+
+Value       String Conversion       Number Conversion        Boolean Conversion
+1           "1"                     1                        true
+0           "0"                     0                        false
+"1"         "1"                     1                        true
+"0"         "0"                     0                        true
+"ten"       "ten"                   NaN                      true
+true        "true"                  1                        true
+false       "false"                 0                        false
+null        "null"                  0                        false
+undefined   "undefined"             NaN                      false
+''          ""                      0                        false
+' '         " "                     0                        true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
