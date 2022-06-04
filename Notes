@@ -1882,28 +1882,1285 @@ The sum is 14.
 
 
 
+JavaScript do...while Loop:
+
+The syntax of do...while loop is:
+do {
+ // body of loop
+} while(condition)
+
+
+Here,
+1. The body of the loop is executed at first. Then the condition is evaluated.
+2. If the condition evaluates to true, the body of the loop inside the do statement is executed again.
+3. The condition is evaluated once again.
+4. If the condition evaluates to true, the body of the loop inside the dostatement is executed again.
+5. This process continues until the condition evaluates to false. Then the loop stops.
+
+
+
+Notes: 
+-> do...while loop is similar to the while loop. 
+-> The only difference is that in do…while loop, the body of loop is executed at least once.
+
+
+
+
+Example : Display Numbers from 1 to 5
+
+// program to display numbers
+let i = 1;
+const n = 5;
+
+// do...while loop from 1 to 5
+do {
+ console.log(i);
+ i++;
+} while(i <= n);
+
+
+Output:
+1
+2
+3
+4
+5
+
+
+
+Example : Sum of Positive Numbers
+// to find the sum of positive numbers
+// if the user enters negative number, the loop terminates
+// negative number is not added to sum
+let sum = 0;
+let number = 0;
+
+do {
+ sum += number;
+ number = parseInt(prompt('Enter a number: '));
+} while(number >= 0)
+console.log(`The sum is ${sum}.`);
+
+Output 1:
+Enter a number: 2
+Enter a number: 4
+Enter a number: -500
+The sum is 6.
+
+
+-> Here, the do...while loop continues until the user enters a negative number. 
+-> When the number is negative, the loop terminates; the negative number is not added to the sum variable.
+
+
+Output 2:
+Enter a number: -80
+The sum is 0.
+
+
+-> The body of the do...while loop runs only once if the user enters a negative number.
+
+
+
+
+Infinite while Loop:
+
+-> If the condition of a loop is always true, the loop runs for infinite times (until the memory is full). 
+
+For example,
+// infinite while loop
+while(true){
+ // body of loop
+}
+
+Here is an example of an infinite do...while loop.
+// infinite do...while loop
+const count = 1;
+do {
+ // body of loop
+} while(count == 1)
+
+-> In the above programs, the condition is always true. 
+-> Hence, the loop body will run for infinite times.
+
+
+
+
+for Vs while Loop:
+
+-> A for loop is usually used when the number of iterations is known. 
+
+
+For example,
+// this loop is iterated 5 times
+for (let i = 1; i <=5; ++i) {
+ // body of loop
+}
+
+
+-> And while and do...while loops are usually used when the number of iterations are unknown. 
+
+For example,
+while (condition) {
+ // body of loop
+}
+
+
+
+
+JavaScript break Statement:
+
+-> The break statement is used to terminate the loop immediately when it is encountered.
+
+
+The syntax of the break statement is:
+break [label];
+
+Notes: 
+-> label is optional and rarely used.
+
+
+
+
+Example 1: break with for Loop
+
+// program to print the value of i
+for (let i = 1; i <= 5; i++) {
+
+// break condition 
+ if (i == 3) {
+ break;
+ }
+ console.log(i);
+}
+
+Output:
+1
+2
+
+
+
+-> In the above program, the for loop is used to print the value of i in each iteration. 
+
+The break statement is used as:
+if(i == 3) {
+ break;
+}
+
+-> This means, when i is equal to 3, the break statement terminates the loop. 
+
+-> Hence, the output doesn't include values greater than or equal to 3.
+
+Notes: 
+-> The break statement is almost always used with decision-making statements. 
+
+
+
+
+Example 2: break with while Loop
+
+// program to find the sum of positive numbers
+// if the user enters a negative numbers, break ends the loop
+// the negative number entered is not added to sum
+let sum = 0, number;
+while(true) {
+ // take input again if the number is positive
+ number = parseInt(prompt('Enter a number: '));
+ // break condition
+ if(number < 0) {
+ break;
+ }
+ // add all positive numbers
+ sum += number;
+}
+// display the sum
+console.log(`The sum is ${sum}.`);
+
+
+
+Output:
+Enter a number: 1
+Enter a number: 2
+Enter a number: 3
+Enter a number: -5
+The sum is 6. 
 
 
 
 
 
+-> In the above program, the user enters a number. 
+-> The while loop is used to print the total sum of numbers entered by the user.
+
+
+Here the break statement is used as:
+if(number < 0) {
+ break;
+}
+
+-> When the user enters a negative number, here -5, the break statement terminates the loop and the control flow of the program goes outside the loop.
+-> Thus, the while loop continues until the user enters a negative number.
+
+
+
+
+Break with Nested Loop:
+
+-> When break is used inside of two nested loops, break terminates the inner loop. 
+
+For example,
+// nested for loops
+// first loop
+for (let i = 1; i <= 3; i++) {
+ // second loop
+ for (let j = 1; j <= 3; j++) {
+ if (i == 2) {
+ break;
+ }
+ console.log(`i = ${i}, j = ${j}`);
+ }
+}
+
+Output:
+i = 1, j = 1
+i = 1, j = 2
+i = 1, j = 3
+i = 3, j = 1
+i = 3, j = 2
+i = 3, j = 3
+
+
+
+-> In the above program, when i == 2, break statement executes. 
+-> It terminates the inner loop and control flow of the program moves to the outer loop.
+-> Hence, the value of i = 2 is never displayed in the output.
+
+
+
+JavaScript Labeled break:
+
+-> When using nested loops, you can also terminate the outer loop with a label statement.
+-> However labeled break is rarely used in JavaScript because this makes the code harder to read and understand.
+-> The break statement is also used with switch statements.
+
+
+
+
+JavaScript continue Statement:
+
+-> The continue statement is used to skip the current iteration of the loop and the control flow of the program goes to the next iteration.
+
+
+The syntax of the continue statement is:
+continue [label];
+
+Notes: 
+-> label is optional and rarely used.
+
+
+
+
+Continue with for Loop:
+
+-> In a for loop, continue skips the current iteration and control flow jumps to the updateExpression.
+
+
+Example 1: Print the Value of i
+// program to print the value of i
+for (let i = 1; i <= 5; i++) {
+ // condition to continue 
+ if (i == 3) {
+ continue;
+ }
+ console.log(i);
+}
+
+
+Output:
+1
+2
+4
+5
+
+
+
+
+-> In the above program, for loop is used to print the value of i in each iteration.
+
+Notice the continue statement inside the loop.
+if(i == 3) {
+ continue;
+}
+
+
+This means
+• When i is equal to 3, the continue statement skips the third iteration.
+• Then, i becomes 4 and the test condition and continue statement is evaluated again.
+• Hence, 4 and 5 are printed in the next two iterations.
+
+
+
+Notes: 
+-> The continue statement is almost always used with decision making statements. 
+-> The break statement terminates the loop entirely. 
+-> However, the continue statement only skips the current iteration.
+
+
+
+
+Example 2: Calculate Positive Number
+
+// program to calculate positive numbers only
+// if the user enters a negative number, that number is skipped from calculation
+// negative number -> loop terminate
+// non-numeric character -> skip iteration
+
+let sum = 0;
+let number = 0;
+
+while (number >= 0) {
+ 
+ // add all positive numbers
+ sum += number;
+ 
+ // take input from the user
+ number = parseInt(prompt('Enter a number: '));
+ 
+ // continue condition
+ if (isNaN(number)) {
+ console.log('You entered a string.');
+ number = 0; // the value of number is made 0 again
+ continue;
+ }
+}
+
+// display the sum
+console.log(`The sum is ${sum}.`);
+
+
+Output:
+Enter a number: 1
+Enter a number: 2
+Enter a number: hello
+You entered a string.
+Enter a number: 5
+Enter a number: -2
+The sum is 8. 
+
+
+
+
+-> In the above program, the user enters a number. 
+-> The while loop is used to print the total sum of positive numbers entered by the user.
+
+
+Notice the use of the continue statement.
+if (isNaN(number)) {
+ continue;
+}
+
+• When the user enters a non-numeric number/string, the continue statement skips the current iteration. 
+     Then the control flow of the program goes to the condition of while loop.
+• When the user enters a number less than 0, the loop terminates.
+
+
+
+-> In the above program, isNaN() is used to check if the value entered by a user is a number or not.
+
+
+
+
+continue with Nested Loop:
+
+-> When continue is used inside of two nested loops, continue skips the current iteration of the inner loop. 
+
+For example,
+// nested for loops
+// first loop
+for (let i = 1; i <= 3; i++) {
+ // second loop
+ for (let j = 1; j <= 3; j++) {
+ if (j == 2) {
+ continue;
+ }
+ console.log(`i = ${i}, j = ${j}`);
+ }
+}
+
+
+Output:
+i = 1, j = 1
+i = 1, j = 3
+i = 2, j = 1
+i = 2, j = 3
+i = 3, j = 1
+i = 3, j = 3
+
+
+
+-> In the above program, when the continue statement executes, it skips the current iteration in the inner loop and control flow of the program moves to the 
+     updateExpression of the inner loop.
+-> Hence, the value of j = 2 is never displayed in the output.
+
+
+
+
+JavaScript Labeled continue:
+
+-> When using nested loops, you can skip the current iteration and the control flow of the program can be passed to a label statement's updateExpression.
+-> But labeled continue is rarely used in JavaScript because this makes the code harder to read and understand.
+
+
+
+
+JavaScript Switch Statement:
+
+-> The JavaScript switch statement is used in decision making.
+-> The switch statement evaluates an expression and executes the corresponding body that matches the expression's result.
+
+
+The syntax of the switch statement is:
+switch(variable/expression) {
+ case value1: 
+ // body of case 1
+ break;
+ case value2: 
+ // body of case 2
+ break;
+ case valueN:
+ // body of case N
+ break;
+ default:
+ // body of default
+}
+
+
+-> The switch statement evaluates a variable/expression inside parentheses ().
+• If the result of the expression is equal to value1, its body is executed.
+• If the result of the expression is equal to value2, its body is executed.
+• This process goes on. If there is no matching case, the default body executes.
+
+
+
+
+Notes:
+• The break statement is optional. If the break statement is encountered, the switch statement ends.
+• If the break statement is not used, the cases after the matching case are also executed.
+• The default clause is also optional.
+
+
+
+
+Example 1: Simple Program Using switch Statement
+
+// program using switch statement
+let a = 2;
+switch (a) {
+ case 1:
+ a = 'one';
+ break;
+ case 2:
+ a = 'two';
+ break;
+ default:
+ a = 'not found';
+ break;
+}
+console.log(`The value is ${a}`);
+
+
+Output:
+The value is two.
+
+
+
+
+In the above program, an expression a = 2 is evaluated with a switch statement.
+• The expression's result is evaluated with case 1 which results in false.
+• Then the switch statement goes to the second case. Here, the expression's result matches with case 2. So The value is two is displayed.
+• The break statement terminates the block and control flow of the program jumps to outside of the switch block.
+
+
+
+
+Example 2: Type Checking in switch Statement
+
+// program using switch statement
+let a = 1;
+switch (a) {
+ case "1":
+ a = 1;
+ break;
+ case 1:
+ a = 'one';
+ break;
+ case 2:
+ a = 'two';
+ break;
+ default:
+ a = 'not found';
+ break;
+}
+console.log(`The value is ${a}`);
+
+Output:
+The value is one.
+
+
+
+
+-> In the above program, an expression a = 1 is evaluated with a switch statement.
+
+• In JavaScript, the switch statement checks the value strictly. So the expression's result does not match with case "1".
+• Then the switch statement goes to the second case. Here, the expressions's result matches with case 1. So The value is one is displayed.
+• The break statement terminates the block and control flow of the program jumps to outside of the switch block.
+
+
+Notes: 
+-> In JavaScript, the switch statement checks the cases strictly (should be of the same data type) with the expression's result. 
+
+Notice in the above example, 1 does not match with "1".
+
+
+
+
+Let's write a program to make a simple calculator with the switch statement.
+
+Example 3: Simple Calculator
+
+// program for a simple calculator
+let result;
+
+// take the operator input
+const operator = prompt('Enter operator ( either +, -, * or / ): ');
+
+// take the operand input
+const number1 = parseFloat(prompt('Enter first number: '));
+const number2 = parseFloat(prompt('Enter second number: '));
+switch(operator) {
+ 
+ case '+':
+ result = number1 + number2;
+ console.log(`${number1} + ${number2} = ${result}`);
+ break;
+ 
+ case '-':
+ result = number1 - number2;
+ console.log(`${number1} - ${number2} = ${result}`);
+ break;
+ 
+ case '*':
+ result = number1 * number2;
+ console.log(`${number1} * ${number2} = ${result}`);
+ break;
+ 
+ case '/':
+ result = number1 / number2;
+ console.log(`${number1} / ${number2} = ${result}`);
+ break;
+ 
+ default:
+ console.log('Invalid operator');
+ break;
+}
+
+Output:
+Enter operator: +
+Enter first number: 4
+Enter second number: 5
+4 + 5 = 9
+
+-> In above program, the user is asked to enter either +, -, * or /, and two operands. 
+-> Then, the switch statement executes cases based on the user input.
+
+
+
+
+JavaScript switch With Multiple Case:
+
+-> In a JavaScript switch statement, cases can be grouped to share the same code.
+
+
+Example 4: switch With Multiple Case
+// multiple case switch program
+let fruit = 'apple';
+switch(fruit) {
+ case 'apple':
+ case 'mango':
+ case 'pineapple':
+ console.log(`${fruit} is a fruit.`);
+ break;
+ default:
+ console.log(`${fruit} is not a fruit.`);
+ break;
+}
+
+Output:
+apple is a fruit.
+
+
+-> In the above program, multiple cases are grouped. All the grouped cases share the same code.
+-> If the value of the fruit variable had value mango or pineapple, the output would have been the same.
+
+
+
+
+JavaScript Function and Function Expressions:
+
+JavaScript Function
+
+-> A function is a block of code that performs a specific task.
+-> Suppose you need to create a program to create a circle and color it. 
+
+
+You can create two functions to solve this problem:
+• a function to draw the circle
+• a function to color the circle
+
+-> Dividing a complex problem into smaller chunks makes your program easy to understand and reusable.
+-> JavaScript also has a huge number of inbuilt functions. 
+-> For example, Math.sqrt() is a function to calculate the square root of a number.
+
+
+
+
+Declaring a Function:
+
+The syntax to declare a function is:
+function nameOfFunction () {
+ // function body 
+}
+
+• A function is declared using the function keyword.
+• The basic rules of naming a function are similar to naming a variable. 
+     It is better to write a descriptive name for your function. 
+     For example, if a function is used to add two numbers, you could name the function add or addNumbers.
+• The body of function is written within {}.
+
+
+For example,
+// declaring a function named greet()
+function greet() {
+ console.log("Hello there");
+}
+
+
+
+
+Calling a Function:
+
+-> In the above program, we have declared a function named greet(). 
+-> To use that function, we need to call it.
+
+Here's how you can call the above greet() function.
+// function call
+greet();
+
+
+
+
+Example 1: Display a Text
+
+// program to print a text
+// declaring a function
+function greet() {
+ console.log("Hello there!");
+}
+// calling the function
+greet();
+
+Output:
+Hello there!
+
+
+
+
+Function Parameters:
+
+-> A function can also be declared with parameters. 
+-> A parameter is a value that is passed when declaring a function.
+
+
+Example 2: Function with Parameters
+
+// program to print the text
+// declaring a function
+function greet(name) {
+ console.log("Hello " + name + ":)");
+}
+
+// variable name can be different
+let name = prompt("Enter a name: ");
+
+// calling function
+greet(name);
+
+Output:
+Enter a name: Simon
+Hello Simon :)
+
+
+
+-> In the above program, the greet function is declared with a name parameter. 
+-> The user is prompted to enter a name. 
+-> Then when the function is called, an argument is passed into the function.
+
+
+Notes: 
+-> When a value is passed when declaring a function, it is called parameter. 
+-> And when the function is called, the value passed is called argument.
+
+
+
+
+Example 3: Add Two Numbers
+// program to add two numbers using a function
+// declaring a function
+function add(a, b) {
+ console.log(a + b);
+}
+// calling functions
+add(3,4);
+add(2,9);
+
+Output:
+7
+11
+
+
+
+
+-> In the above program, the add function is used to find the sum of two numbers.
+• The function is declared with two parameters a and b.
+• The function is called using its name and passing two arguments 3 and 4 in one and 2 and 9 in another.
+
+
+-> Notice that you can call a function as many times as you want. 
+-> You can write one function and then call it multiple times with different arguments.
+
+
+
+
+Function Return:
+
+-> The return statement can be used to return the value to a function call.
+-> The return statement denotes that the function has ended. Any code after return is not executed.
+-> If nothing is returned, the function returns an undefined value.
+
+
+
+
+Example 4: Sum of Two Numbers
+
+// program to add two numbers
+// declaring a function
+function add(a, b) {
+ return a + b;
+}
+
+// take input from the user
+let number1 = parseFloat(prompt("Enter first number: "));
+let number2 = parseFloat(prompt("Enter second number: "));
+
+// calling function
+let result = add(number1,number2);
+
+// display the result
+console.log("The sum is " + result);
+
+
+Output:
+Enter first number: 3.4
+Enter second number: 4
+The sum is 7.4
+
+
+
+
+-> In the above program, the sum of the numbers is returned by the function using the return statement. 
+-> And that value is stored in the result variable.
+
+
+Benefits of Using a Function
+• Function makes the code reusable. You can declare it once and use it multiple times.
+• Function makes the program easier as each small task is divided into a function.
+• Function increases readability.
+
+
+
+Function Expressions:
+
+-> In Javascript, functions can also be defined as expressions. 
+
+For example,
+// program to find the square of a number
+// function is declared inside the variable
+let x = function (num) { return num * num };
+console.log(x(4));
+
+// can be used as variable value for other variables
+let y = x(3);
+console.log(y);
+
+
+Output:
+16
+9
+
+
+
+
+-> In the above program, variable x is used to store the function. 
+-> Here the function is treated as an expression. 
+-> And the function is called using the variable name.
+-> The function above is called an anonymous function.
+
+
+Note: In ES2015, JavaScript expressions are written as arrow functions.
+
+
+
+
+JavaScript Variable Scope:
+
+-> Scope refers to the availability of variables and functions in certain parts of the code.
+
+
+In JavaScript, a variable has two types of scope:
+1. Global Scope
+2. Local Scope
+
+
+Global Scope:
+-> A variable declared at the top of a program or outside of a function is considered a global scope variable.
+
+
+Let's see an example of a global scope variable.
+// program to print a text 
+let a = "hello";
+function greet () {
+ console.log(a);
+}
+greet(); // hello
+
+-> In the above program, variable a is declared at the top of a program and is a global variable. 
+-> It means the variable a can be used anywhere in the program.
+
+
+
+-> The value of a global variable can be changed inside a function. 
+
+For example,
+// program to show the change in global variable
+let a = "hello";
+function greet() {
+ a = 3;
+}
+// before the function call
+console.log(a);
+
+//after the function call
+greet();
+console.log(a); // 3
+
+
+
+-> In the above program, variable a is a global variable. 
+-> The value of a is hello. 
+
+-> Then the variable a is accessed inside a function and the value changes to 3.
+-> Hence, the value of a changes after changing it inside the function.
+
+
+Notes: 
+-> It is a good practice to avoid using global variables because the value of a global variable can change in different areas in the program. 
+-> It can introduce unknown results in the program.
+
+-> In JavaScript, a variable can also be used without declaring it. 
+-> If a variable is used without declaring it, that variable automatically becomes a global variable.
+
+
+For example,
+function greet() {
+ a = "hello"
+}
+greet();
+console.log(a); // hello
+
+-> In the above program, variable a is a global variable.
+-> If the variable was declared using let a = "hello", the program would throw an error.
+
+Notes: 
+-> In JavaScript, there is "strict mode"; in which a variable cannot be used without declaring it.
+
+
+
+
+Local Scope:
+
+-> A variable can also have a local scope, i.e it can only be accessed within a function.
+
+
+Example 1: Local Scope Variable
+// program showing local scope of a variable
+let a = "hello";
+function greet() {
+ let b = "World"
+ console.log(a + b);
+}
+greet();
+console.log(a + b); // error
+
+Output:
+helloWorld
+Uncaught ReferenceError: b is not defined
+
+
+
+
+-> In the above program, variable a is a global variable and variable b is a local variable. 
+-> The variable b can be accessed only inside the function greet. 
+-> Hence, when we try to access variable b outside of the function, an error occurs.
 
 
 
 
 
+let is Block Scoped:
+
+-> The let keyword is block-scoped (variable can be accessed only in the immediate block).
+
+
+Example 2: block-scoped Variable
+// program showing block-scoped concept
+// global variable
+let a = 'Hello';
+function greet() {
+ // local variable
+ let b = 'World';
+ console.log(a + ' ' + b);
+ if (b == 'World') {
+ // block-scoped variable
+ let c = 'hello';
+ console.log(a + ' ' + b + ' ' + c);
+ }
+ // variable x cannot be accessed here
+ console.log(a + ' ' + b + ' ' + c);
+}
+greet();
+
+
+Output:
+Hello World
+Hello World hello
+
+Uncaught ReferenceError: x is not defined
+
+
+-> In the above program, variable
+• a is a global variable. It can be accessed anywhere in the program.
+• b is a local variable. It can be accessed only inside the function greet.
+• c is a block-scoped variable. It can be accessed only inside the if statement block.
+
+
+-> Hence, in the above program, the first two console.log() work without any issue.
+-> However, we are trying to access the block-scoped variable c outside of the block in the third console.log(). 
+-> This will throw an error.
+
+
+Notes: 
+-> In JavaScript, var is function scoped and let is block-scoped. 
+-> If you try to use 
+     var c = 'hello'; 
+-> inside the if statement in the above program, the whole program works, as c is treated as a local variable.
+
+
+
+
+JavaScript Hoisting:
+
+-> Hoisting in JavaScript is a behavior in which a function or a variable can be used before declaration. 
+
+
+For example,
+// using test before declaring
+console.log(test); // undefined
+var test;
+
+-> The above program works and the output will be undefined. 
+-> The above program behaves as
+// using test before declaring
+var test;
+console.log(test); // undefined
+
+
+-> Since the variable test is only declared and has no value, undefined value is assigned to it.
+
+Notes: 
+-> In hoisting, though it seems that the declaration has moved up in the program, the actual thing that happens is that the function and variable declarations 
+       are added to memory during the compile phase.
+
+
+
+
+Variable Hoisting:
+
+-> In terms of variables and constants, keyword var is hoisted and let and const does not allow hoisting.
+
+
+For example,
+// program to display value
+a = 5;
+console.log(a);
+var a; // 5
+
+-> In the above example, variable a is used before declaring it. 
+-> And the program works and displays the output 5. 
+
+
+The program behaves as:
+// program to display value
+var a;
+a = 5;
+console.log(a); // 5
+
+
+-> However in JavaScript, initializations are not hoisted. 
+
+For example,
+// program to display value
+console.log(a);
+var a = 5;
+
+Output:
+undefined
+
+
+-> The above program behaves as:
+var a;
+console.log(a);
+a = 5;
+
+
+
+
+-> Only the declaration is moved to the memory in the compile phase. 
+-> Hence, the value of variable a is undefined because a is printed without initializing it.
+
+-> Also, when the variable is used inside the function, the variable is hoisted only to the top of the function. 
+
+For example,
+// program to display value
+var a = 4;
+function greet() {
+ b = 'hello';
+ console.log(b); // hello
+ var b;
+}
+greet(); // hello
+console.log(b);
+
+
+Output:
+hello
+Uncaught ReferenceError: b is not defined
+
+
+
+-> In the above example, variable b is hoisted to the top of the function greet and becomes a local variable. 
+-> Hence b is only accessible inside the function. b does not become a global variable.
+
+
+
+-> If a variable is used with the let keyword, that variable is not hoisted. 
+
+For example,
+// program to display value
+a = 5;
+console.log(a);
+let a; // error
+
+Output:
+Uncaught ReferenceError: Cannot access 'a' before initialization
+
+-> While using let, the variable must be declared first.
+
+
+
+
+Function Hoisting:
+-> A function can be called before declaring it. 
+
+For example,
+// program to print the text
+greet();
+function greet() {
+ console.log('Hi, there.');
+}
+
+Output:
+Hi, there
+
+
+
+
+-> In the above program, the function greet is called before declaring it and the program shows the output. 
+-> This is due to hoisting.
+
+
+-> However, when a function is used as an expression, an error occurs because only declarations are hoisted. 
+
+For example;
+// program to print the text
+greet();
+let greet = function() {
+ console.log('Hi, there.');
+}
+
+Output:
+Uncaught ReferenceError: greet is not defined
+
+
+
+
+-> If var was used in the above program, the error would be:
+Uncaught TypeError: greet is not a function
+
+Notes: 
+-> Generally, hoisting is not performed in other programming languages like Python, C, C++, Java.
+-> Hoisting can cause undesirable outcomes in your program. 
+-> And it is best to declare variables and functions first before using them and avoid hoisting.
+-> In the case of variables, it is better to use let than var.
+
+
+
+
+JavaScript Recursion:
+
+-> Recursion is a process of calling itself. 
+-> A function that calls itself is called a recursive function.
+
+The syntax for recursive function is:
+function recurse() {
+ // function code
+ recurse();
+ // function code
+}
+recurse();
+
+
+-> Here, the recurse() function is a recursive function. 
+-> It is calling itself inside the function.
+
+
+
+
+-> A recursive function must have a condition to stop calling itself. 
+-> Otherwise, the function is called indefinitely.
+
+
+-> Once the condition is met, the function stops calling itself. 
+-> This is called a base condition.
+
+-> To prevent infinite recursion, you can use if...else statement (or similar approach) where one branch makes the recursive call, and the other doesn't.
+
+
+
+
+-> So, it generally looks like this.
+function recurse() {
+ if(condition) {
+ recurse();
+ }
+ else {
+ // stop calling recurse()
+ }
+}
+recurse();
+
+-> A simple example of a recursive function would be to count down the value to 1.
+
+
+
+
+Example 1: Print Numbers
+// program to count down numbers to 1
+function countDown(number) {
+ 
+ // display the number
+ console.log(number);
+ 
+ // decrease the number value
+ const newNumber = number - 1;
+ 
+ // base case
+ if (newNumber > 0) {
+ countDown(newNumber);
+ }
+}
+countDown(4);
+
+Output:
+4
+3
+2
+1
 
 
 
 
 
+-> In the above program, the user passes a number as an argument when calling a function.
+
+-> In each iteration, the number value is decreased by 1 and function countDown() is called until the number is positive. 
+-> Here, newNumber > 0 is the base condition.
+
+This recursive call can be explained in the following steps:
+countDown(4) prints 4 and calls countDown(3)
+countDown(3) prints 3 and calls countDown(2)
+countDown(2) prints 2 and calls countDown(1)
+countDown(1) prints 1 and calls countDown(0)
+
+-> When the number reaches 0, the base condition is met, and the function is not called anymore.
 
 
 
 
+Example 2: Find Factorial
+// program to find the factorial of a number
+function factorial(x) {
+ // if number is 0
+ if (x === 0) {
+ return 1;
+ }
+ // if number is positive
+ else {
+ return x * factorial(x - 1);
+ }
+}
+const num = 3;
+// calling factorial() if num is non-negative
+if (num > 0) {
+ let result = factorial(num);
+ console.log(`The factorial of ${num} is ${result}`);
+}
+
+Output:
+The factorial of 3 is 6
 
 
 
+
+-> When you call function factorial() with a positive integer, it will recursively call itself by decreasing the number.
+-> This process continues until the number becomes 1. Then when the number reaches 0, 1 is returned.
+
+
+
+
+-> This recursive call can be explained in the following steps:
+factorial(3) returns 3 * factorial(2)
+factorial(2) returns 3 * 2 * factorial(1)
+factorial(1) returns 3 * 2 * 1 * factorial(0)
+factorial(0) returns 3 * 2 * 1 * 1
 
 
 
