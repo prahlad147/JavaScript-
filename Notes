@@ -4116,29 +4116,1380 @@ console.log(person.__proto__); // { age: 24 }
       
 
 
+JavaScript Array:
+
+-> An array is an object that can store multiple elements.
+
+For example,
+const myArray = ['hello', 'world', 'welcome'];
+
+
+
+
+Create an Array:
+
+-> You can create an array using two ways:
+
+1. Using an array literal
+
+-> The easiest way to create an array is by using an array literal []. 
+
+For example,
+const array1 = ["eat", "sleep"];
+
+
+2. Using the new keyword
+
+-> You can also create an array using JavaScript's new keyword.
+
+const array2 = new Array("eat", "sleep");
+
+
+
+Notes:
+-> In both of the above examples, we have created an array having two elements.
+-> It is recommended to use array literal to create an array.
+
+
+
+
+Here are more examples of arrays:
+
+// empty array
+const myList = [ ];
+
+// array of numbers
+const numberArray = [ 2, 4, 6, 8];
+
+// array of strings
+const stringArray = [ 'eat', 'work', 'sleep'];
+
+// array with mixed data types
+const newData = ['work', 'exercise', 1, true];
+
+
+-> You can also store arrays, functions and other objects inside an array. 
+
+
+For example,
+const newData = [
+ {'task1': 'exercise'},
+ [1, 2 ,3],
+ function hello() { console.log('hello')}
+];
+
+
+
+
+Access Elements of an Array:
+
+-> You can access elements of an array using indices (0, 1, 2 …). 
+
+
+For example,
+const myArray = ['h', 'e', 'l', 'l', 'o'];
+
+// first element
+console.log(myArray[0]); // "h"
+
+// second element
+console.log(myArray[1]); // "e"
+
+
+Notes: 
+-> Array's index starts with 0, not 1.
+
+
+
+
+Add an Element to an Array:
+
+-> You can use the built-in method push() and unshift() to add elements to an array.
+
+
+-> The push() method adds an element at the end of the array. For example,
+let dailyActivities = ['eat', 'sleep'];
+
+// add an element at the end
+dailyActivities.push('exercise');
+console.log(dailyActivities); // ['eat', 'sleep', 'exercise']
+
+
+
+-> The unshift() method adds an element at the beginning of the array. 
+
+
+For example,
+let dailyActivities = ['eat', 'sleep'];
+
+//add an element at the start
+dailyActivities.unshift('work'); 
+console.log(dailyActivities); // ['work', 'eat', 'sleep']
+
+
+
+
+Change the Elements of an Array:
+
+-> You can also add elements or change the elements by accessing the index value.
+
+let dailyActivities = [ 'eat', 'sleep'];
+
+// this will add the new element 'exercise' at the 2 index
+dailyActivities[2] = 'exercise';
+console.log(dailyActivities); // ['eat', 'sleep', 'exercise']
+
+
+
+-> Suppose, an array has two elements. If you try to add an element at index 3 (fourth element), the third element will be undefined. 
+
+
+For example,
+let dailyActivities = [ 'eat', 'sleep'];
+// this will add the new element 'exercise' at the 3 index
+dailyActivities[3] = 'exercise';
+console.log(dailyActivities); // ["eat", "sleep", undefined, "exercise"]
+
+
+-> Basically, if you try to add elements to high indices, the indices in between will have undefined value.
+
+
+
+
+Remove an Element from an Array:
+
+-> You can use the pop() method to remove the last element from an array. 
+-> The pop()method also returns the returned value. 
+
+For example,
+let dailyActivities = ['work', 'eat', 'sleep', 'exercise'];
+
+// remove the last element
+dailyActivities.pop();
+console.log(dailyActivities); // ['work', 'eat', 'sleep']
+
+// remove the last element from ['work', 'eat', 'sleep']
+const removedElement = dailyActivities.pop();
+
+//get removed element
+console.log(removedElement); // 'sleep'
+console.log(dailyActivities); // ['work', 'eat']
+
+
+
+-> If you need to remove the first element, you can use the shift() method. 
+
+-> The shift()method removes the first element and also returns the removed element. 
+
+For example,
+let dailyActivities = ['work', 'eat', 'sleep'];
+
+// remove the first element
+dailyActivities.shift();
+console.log(dailyActivities); // ['eat', 'sleep']
+
+
+
+
+Array length;
+
+-> You can find the length of an element (the number of elements in an array) using the length property. 
+
+For example,
+const dailyActivities = [ 'eat', 'sleep'];
+// this gives the total number of elements in an array
+console.log(dailyActivities.length); // 2
+
+
+
+
+Array Methods:
+
+-> In JavaScript, there are various array methods available that makes it easier to perform useful calculations.
+
+
+Some of the commonly used JavaScript array methods are:
+Method           Description
+concat()         joins two or more arrays and returns a result
+indexOf()        searches an element of an array and returns its position
+find()           returns the first value of an array element that passes a test
+findIndex()      returns the first index of an array element that passes a test
+forEach()        calls a function for each element
+includes()       checks if an array contains a specified element
+push()           adds a new element to the end of an array and returns the new length of an array
+unshift()        adds a new element to the beginning of an array and returns the new length of an array
+pop()            removes the last element of an array and returns the removed element
+shift()          removes the first element of an array and returns the removed element
+sort()           sorts the elements alphabetically in strings and in ascending order
+slice()          selects the part of an array and returns the new array
+splice()         removes or replaces existing elements and/or adds new elements
 
 
 
 
 
+Example: JavaScript Array Methods
+
+let dailyActivities = ['sleep', 'work', 'exercise']
+let newRoutine = ['eat'];
+
+// sorting elements in the alphabetical order
+dailyActivities.sort();
+console.log(dailyActivities); // ['exercise', 'sleep', 'work']
+
+//finding the index position of string
+const position = dailyActivities.indexOf('work');
+console.log(position); // 2
+
+// slicing the array elements
+const newDailyActivities = dailyActivities.slice(1);
+console.log(newDailyActivities); // [ 'sleep', 'work']
+
+// concatenating two arrays
+const routine = dailyActivities.concat(newRoutine);
+console.log(routine); // ["exercise", "sleep", "work", "eat"]
+
+
+Notes:
+-> If the element is not in an array, indexOf() gives -1.
+
+
+
+
+Working of JavaScript Arrays:
+
+-> In JavaScript, an array is an object. And, the indices of arrays are objects keys.
+-> Since arrays are objects, the array elements are stored by reference. 
+
+-> Hence, when an array value is copied, any change in the copied array will also reflect in the original array. 
+
+For example,
+let arr = ['h', 'e'];
+let arr1 = arr;
+arr1.push('l');
+console.log(arr); // ["h", "e", "l"]
+console.log(arr1); // ["h", "e", "l"]
+
+
+
+
+-> You can also store values by passing a named key in an array. 
+
+For example,
+let arr = ['h', 'e'];
+arr.name = 'John';
+console.log(arr); // ["h", "e"]
+console.log(arr.name); // "John"
+console.log(arr['name']); // "John"
+
+
+
+-> However, it is not recommended to store values by passing arbitrary names in an array.
+-> Hence in JavaScript, you should use an array if values are in ordered collection. 
+-> Otherwise it's better to use object with { }.
+
+
+
+
+JavaScript Multidimensional Array:
+
+A multidimensional array is an array that contains another array. 
+
+For example,
+// multidimensional array
+const data = [[1, 2, 3], [1, 3, 4], [4, 5, 6]];
+
+
+
+
+Create a Multidimensional Array:
+
+Here is how you can create multidimensional arrays in JavaScript.
+
+Example 1
+let studentsData = [['Jack', 24], ['Sara', 23], ['Peter', 24]];
+
+Example 2
+let student1 = ['Jack', 24];
+let student2 = ['Sara', 23];
+let student3 = ['Peter', 24];
+
+
+// multidimensional array
+let studentsData = [student1, student2, student3];
+-> Here, both example 1 and example 2 creates a multidimensional array with the same data.
+
+
+
+
+Access Elements of an Array:
+
+-> You can access the elements of a multidimensional array using indices (0, 1, 2 …). 
+
+
+For example,
+let x = [
+['Jack', 24],
+['Sara', 23], 
+['Peter', 24]
+];
+
+
+// access the first item 
+console.log(x[0]); // ["Jack", 24]
+
+// access the first item of the first inner array
+console.log(x[0][0]); // Jack
+
+// access the second item of the third inner array
+console.log(x[2][1]); // 24
+
+
+-> You can think of a multidimensional array (in this case, x), as a table with 3 rows and 2 columns.
 
 
 
 
 
+Add an Element to a Multidimensional Array:
+
+-> You can use the Array's push() method or an indexing notation to add elements to a multidimensional array.
+
+
+Adding Element to the Outer Array:
+let studentsData = [['Jack', 24], ['Sara', 23],];
+studentsData.push(['Peter', 24]);
+console.log(studentsData); //[["Jack", 24], ["Sara", 23], ["Peter", 24]
+
+
+
+Adding Element to the Inner Array:
+
+// using index notation
+let studentsData = [['Jack', 24], ['Sara', 23],];
+studentsData[1][2] = 'hello';
+console.log(studentsData); // [["Jack", 24], ["Sara", 23, "hello"]]
+
+// using push()
+let studentsData = [['Jack', 24], ['Sara', 23],];
+studentsData[1].push('hello');
+console.log(studentsData); // [["Jack", 24], ["Sara", 23, "hello"]]
+
+
+
+
+-> You can also use the Array's splice() method to add an element at a specified index. 
+
+For example,
+let studentsData = [['Jack', 24], ['Sara', 23],];
+
+// adding element at 1 index
+studentsData.splice(1, 0, ['Peter', 24]);
+console.log(studentsData); // [["Jack", 24], ["Peter", 24], ["Sara", 23]]
+
+
+
+
+Remove an Element from a Multidimensional Array:
+
+-> You can use the Array's pop() method to remove the element from a multidimensional array. 
+
+For example,
+
+Remove Element from Outer Array:
+
+// remove the array element from outer array
+let studentsData = [['Jack', 24], ['Sara', 23],];
+studentsData.pop();
+console.log(studentsData); // [["Jack", 24]]
+
+
+Remove Element from Inner Array:
+
+// remove the element from the inner array
+let studentsData = [['Jack', 24], ['Sara', 23]];
+studentsData[1].pop();
+console.log(studentsData); // [["Jack", 24], ["Sara"]]
+
+
+
+
+-> You can also use the splice() method to remove an element at a specified index. 
+
+For example,
+let studentsData = [['Jack', 24], ['Sara', 23],];
+
+// removing 1 index array item
+studentsData.splice(1,1);
+console.log(studentsData); // [["Jack", 24]]
+
+
+
+
+Iterating over Multidimensional Array:
+
+-> You can iterate over a multidimensional array using the Array's forEach() method to iterate over the multidimensional array. 
+
+For example,
+let studentsData = [['Jack', 24], ['Sara', 23],];
+
+// iterating over the studentsData
+studentsData.forEach((student) => {
+ student.forEach((data) => {
+ console.log(data);
+ });
+});
+
+
+Output:
+Jack
+24
+Sara
+23
 
 
 
 
 
+-> The first forEach() method is used to iterate over the outer array elements and the second forEach() is used to iterate over the inner array elements.
+-> You can also use the for...of loop to iterate over the multidimensional array. 
+
+
+For example,
+let studentsData = [['Jack', 24], ['Sara', 23],];
+for (let i of studentsData) {
+ for (let j of i) {
+ console.log(j);
+ }
+}
+
+
+
+
+-> You can also use the for loop to iterate over a multidimensional array. 
+
+For example,
+let studentsData = [['Jack', 24], ['Sara', 23],];
+// looping outer array elements
+for(let i = 0; i < studentsData.length; i++){
+ // get the length of the inner array elements
+ let innerArrayLength = studentsData[i].length;
+ 
+ // looping inner array elements
+ for(let j = 0; j < innerArrayLength; j++) {
+ console.log(studentsData[i][j]);
+ }
+}
+
+
+
+
+JavaScript String:
+
+-> JavaScript string is a primitive data type that is used to work with texts. 
+
+For example,
+const name = 'John';
+
+
+
+
+Create JavaScript Strings:
+
+-> In JavaScript, strings are created by surrounding them with quotes. 
+
+
+
+There are three ways you can use quotes.
+• Single quotes: 'Hello'
+• Double quotes: "Hello"
+• Backticks: `Hello`
+
+
+For example,
+//strings example
+const name = 'Peter';
+const name1 = "Jack";
+const result = `The names are ${name} and ${name1}`;
+
+
+
+-> Single quotes and double quotes are practically the same and you can use either of them.
+-> Backticks are generally used when you need to include variables or expressions into a string. 
+
+
+-> This is done by wrapping variables or expressions with ${variable or expression} as shown above.
+-> You can also write a quote inside another quote. 
+
+For example,
+const name = 'My name is "Peter".';
+
+
+-> However, the quote should not match the surrounding quotes. 
+
+For example,
+const name = 'My name is 'Peter'.'; // error
+
+
+
+
+Access String Characters:
+
+You can access the characters in a string in two ways.
+• One way is to treat strings as an array. 
+
+For example,
+const a = 'hello';
+console.log(a[1]); // "e"
+
+• Another way is to use the method charAt(). 
+For example,
+const a = 'hello';
+console.log(a.charAt(1)); // "e"
+
+
+
+
+JavaScript Strings are immutable:
+
+-> In JavaScript, strings are immutable. 
+-> That means the characters of a string cannot be changed. 
+
+For example,
+let a = 'hello';
+a[0] = 'H';
+console.log(a); // "hello"
+
+
+-> However, you can assign the variable name to a new string. 
+
+For example,
+let a = 'hello';
+a = 'Hello';
+console.log(a); // "Hello"
 
 
 
 
 
+JavaScript is Case-Sensitive:
+
+-> JavaScript is case-sensitive. 
+-> That means in JavaScript, the lowercase and uppercase letters are treated as different values. 
+
+For example,
+const a = 'a';
+const b = 'A'
+console.log(a === b); // false
+
+-> In JavaScript, a and A are treated as different values.
 
 
 
+
+JavaScript Multiline Strings:
+
+-> To use a multiline string, you can either use the + operator or the \ operator. 
+
+For example,
+
+// using the + operator
+const message1 = 'This is a long message ' +
+ 'that spans across multiple lines' + 
+ 'in the code.'
+
+
+// using the \ operator
+const message2 = 'This is a long message \
+that spans across multiple lines \
+in the code.'
+
+
+
+
+
+JavaScript String Length:
+
+-> To find the length of a string, you can use built-in length property. 
+
+For example,
+const a = 'hello';
+console.log(a.length); // 5
+
+
+
+
+JavaScript String Objects:
+
+-> You can also create strings using the new keyword. 
+
+For example,
+const a = 'hello';
+const b = new String('hello');
+console.log(a); // "hello"
+console.log(b); // "hello"
+console.log(typeof a); // "string"
+console.log(typeof b); // "object"
+
+
+Notes: 
+-> It is recommended to avoid using string objects. 
+-> Using string objects slows down the program.
+
+
+
+
+JavaScript String Methods:
+
+Here are the commonly used JavaScript String methods:
+
+
+Method                     Description
+charAt(index)              returns the character at the specified index
+concat()                   joins two or more strings
+replace()                  replaces a string with another string
+split()                    converts the string to an array of strings
+substr(start, length)      returns a part of a string
+substring(start,end)       returns a part of a string
+slice(start, end)          returns a part of a string
+toLowerCase()              returns the passed string in lower case
+toUpperCase()              returns the passed string in upper case
+trim()                     removes whitespace from the strings
+includes()                 searches for a string and returns a boolean value
+search()                   searches for a string and returns a position of a match
+
+
+
+
+
+Example: JavaScript String Methods
+
+const text1 = 'hello';
+const text2 = 'world';
+const text3 = ' JavaScript ';
+
+
+// concatenating two strings
+const result1 = text1.concat(' ', text2);
+console.log(result1); // "hello world"
+
+
+// converting the text to uppercase
+const result2 = text1.toUpperCase();
+console.log(result2); // HELLO
+
+
+// removing whitespace from the string
+const result3 = text3.trim();
+console.log(result3); // JavaScript
+
+
+// converting the string to an array
+const result4 = text1.split();
+console.log(result4); // ["hello"]
+
+
+// slicing the string
+const result5= text1.slice(1, 3);
+console.log(result5); // "el"
+
+
+
+
+JavaScript String() Function:
+
+The String() function is used to convert various data types to strings. 
+
+For example,
+const a = 225; // number
+const b = true; // boolean
+
+
+//converting to string
+const result1 = String(a);
+const result2 = String(b);
+console.log(result1); // "225"
+console.log(result2); // "true"
+
+
+
+
+Escape Character:
+
+-> You can use the backslash escape character \ to include special characters in a string. 
+
+For example,
+const name = 'My name is \'Peter\'.';
+console.log(name);
+
+
+Output:
+My name is 'Peter'.
+
+
+-> In the above program, the same quote is included using \.
+-> Here are other ways that you can use \:
+
+
+
+Code    Output
+\”      include double quote
+\\      include backslash
+\n      new line
+\r      carriage return
+\v      vertical tab
+\t      horizontal tab
+\b      backspace
+\f      form feed
+
+
+
+
+JavaScript for...in loop:
+• JavaScript while and do...while loop
+• JavaScript for loop
+
+-> There are also other types of loops. 
+-> The for..in loop in JavaScript allows you to iterate over all property keys of an object.
+
+
+
+
+JavaScript for...in loop:
+
+The syntax of the for...in loop is:
+for (key in object) {
+ // body of for...in
+}
+
+In each iteration of the loop, a key is assigned to the key variable. 
+The loop continues for all object properties.
+
+
+Notes: 
+-> Once you get keys, you can easily find their corresponding values.
+
+
+
+
+Example 1: Iterate Through an Object
+
+const student = {
+ name: 'Monica',
+ class: 7,
+ age: 12
+}
+
+// using for...in
+for ( let key in student ) {
+ // display the properties
+ console.log(`${key} => ${student[key]}`);
+}
+
+
+Output:
+name => Monica
+class => 7
+age => 12
+
+
+
+-> In the above program, the for...in loop is used to iterate over the student object and print all its properties.
+• The object key is assigned to the variable key.
+• student[key] is used to access the value of key.
+
+
+
+
+Example 2: Update Values of Properties
+
+const salaries= {
+ Jack : 24000,
+ Paul : 34000,
+ Monica : 55000
+}
+
+// using for...in
+for ( let i in salaries) {
+ 
+ // add a currency symbol
+ let salary = "$" + salaries[i];
+ 
+ // display the values
+ console.log(`${i} : ${salary}`);
+}
+
+Output:
+Jack : $24000,
+Paul : $34000,
+Monica : $55000
+
+
+-> In the above example, the for...in loop is used to iterate over the properties of the salaries object. 
+-> Then, the string $ is added to each value of the object.
+
+
+
+
+for...in with Strings:
+
+-> You can also use for...in loop to iterate over string values. 
+
+For example,
+const string = 'code';
+// using for...in loop
+for (let i in string) {
+ console.log(string[i]);
+}
+
+Output:
+c
+o
+d
+e
+
+
+
+
+for...in with Arrays:
+
+-> You can also use for...in with arrays. 
+
+For example,
+// define array
+const arr = [ 'hello', 1, 'JavaScript' ];
+// using for...in loop
+for (let x in arr) {
+ console.log(arr[x]);
+}
+
+Output:
+hello
+1
+JavaScript
+
+
+Notes: 
+-> You should not use for...in to iterate over an array where the index order is important.
+-> One of the better ways to iterate over an array is using the for...of loop.
+
+
+
+
+
+JavaScript Number:
+
+-> In JavaScript, numbers are primitive data types. 
+
+For example,
+const a = 3;
+const b = 3.13;
+
+-> Unlike in some other programming languages, you don't have to specifically declare for integer or floating values using int, float, etc.
+
+
+-> You can use exponential notation e to include too large or too small numbers. 
+
+For example,
+const a1 = 5e9;
+console.log(a1); //5000000000
+
+const a2 = 5e-5;
+console.log(a2); // 0.00005
+
+
+
+-> Numbers can also be denoted in hexadecimal notation. 
+
+For example,
+const a = 0xff;
+console.log(a); // 255
+
+const b = 0x00 ;
+console.log(b); // 0
+
+
+
+
++ Operator with Numbers:
+
+
+-> When + is used with numbers, it is used to add the numbers. 
+
+For example,
+const a = 4 + 9;
+console.log(a); // 13
+
+
+-> When + is used with numbers and strings, it is used to concatenate them. 
+
+For example,
+const a = '4' + 9;
+console.log(a); // 49
+
+
+-> When a numeric string is used with other numeric operations, the numeric string is 
+converted to a number. 
+
+For example,
+const a = '4' - 2;
+console.log(a); // 2
+
+const a = '4' / 2;
+console.log(a); // 2
+
+const a = '4' * 2;
+console.log(a); // 8
+
+
+
+
+JavaScript NaN:
+
+-> In JavaScript, NaN(Not a Number) is a keyword that indicates that the value is not a number.
+
+-> Performing arithmetic operations (except + ) to numeric value with string results in NaN. 
+
+For example,
+const a = 4 - 'hello';
+console.log(a); // NaN
+
+
+-> The built-in function isNaN() can be used to find if a value is a number. 
+
+For example,
+const a = isNaN(9);
+console.log(a); // false
+
+const a = isNaN(4 - 'hello');
+console.log(a); // true
+
+
+-> When the typeof operator is used for NaN value, it gives a number output. 
+
+For example,
+const a = 4 - 'hello';
+console.log(a); // NaN
+console.log(typeof a); // "number"
+
+
+
+
+JavaScript Infinity:
+
+-> In JavaScript, when calculation is done that exceeds the largest (or smallest) possible number, Infinity (or -Infinity) is returned.
+
+For example,
+const a = 2 / 0;
+console.log(a); // Infinity
+
+const a = -2 / 0;
+console.log(a); // -Infinity
+
+
+
+
+JavaScript BigInt:
+
+-> In JavaScript, Number type can only represent numbers less than (2^53 - 1) and more than -(2^53 - 1). 
+-> However, if you need to use a larger number than that, you can use the BigInt data type.
+
+
+-> A BigInt number is created by appending n to the end of an integer. 
+
+For example,
+// BigInt value
+const value = 900719925124740998n;
+
+// Adding two big integers
+const value1 = value + 1n;
+console.log(value1); // returns "900719925124740999n"
+
+
+Notes: 
+-> BigInt was introduced in the newer version of JavaScript and is not supported by many browsers.
+
+
+
+
+
+JavaScript Numbers Are Stored in 64-bit:
+
+-> In JavaScript, numbers are stored in 64-bit format IEEE-754, also known as "double precision floating point numbers".
+
+-> The numbers are stored in 64 bits (the number is stored in 0 to 51 bit positions, the exponent in 52 to 62 bit positions and the sign in 63 bit position).
+
+
+Numbers             Exponent               Sign
+52 bits(0 - 51)     11 bits(52- 62)         1 bit(63)
+
+
+
+
+
+Precision Problems:
+
+-> Operations on floating-point numbers results in some unexpected results. 
+
+
+For example,
+const a = 0.1 + 0.2;
+console.log(a); // 0.30000000000000004
+
+
+-> The result should be 0.3 instead of 0.30000000000000004. 
+-> This error occurs because in JavaScript, numbers are stored in binary form to represent decimal digits internally. 
+-> And decimal numbers can't be represented in binary form exactly.
+
+
+
+
+-> To solve the above problem, you can do something like this:
+const a = (0.1 * 10 + 0.2 * 10) / 10;
+console.log(a); // 0.3
+
+You can also use the toFixed() method.
+const a = 0.1 + 0.2;
+console.log(a.toFixed(2)); // 0.30
+
+toFixed(2) rounds up the decimal number to two decimal values.
+const a = 9999999999999999
+console.log(a); // 10000000000000000
+
+
+Notes: 
+-> Integers are accurate up to 15 digits.
+
+
+
+
+Number Objects:
+
+-> You can also create numbers using the new keyword. 
+
+
+For example,
+const a = 45;
+// creating a number object
+const b = new Number(45);
+console.log(a); // 45
+console.log(b); // 45
+console.log(typeof a); // "number"
+console.log(typeof b); // "object"
+
+
+Notes: 
+-> It is recommended to avoid using number objects. 
+-> Using number objects slows down the program.
+
+
+
+
+JavaScript Number Methods:
+
+Here is a list of built-in number methods in JavaScript.
+
+
+
+Method                                   Description
+isNaN()                                  determines whether the passed value is NaN
+isFinite()                               determines whether the passed value is a finite number
+isInteger()                              determines whether the passed value is an integer
+isSafeInteger()                          determines whether the passed value is a safe integer
+parseFloat(string)                       converts the numeric floating string to floating-point number
+parseInt(string, [radix])                converts the numeric string to integer
+toExponential(fractionDigits)            returns a string value for a number in exponential notation
+toFixed(digits)                          returns a string value for a number in fixed-point notation
+toPrecision()                            returns a string value for a number to a specified precision
+toString([radix])                        returns a string value in a specified radix(base)
+valueof()                                returns the numbers value
+toLocaleString()                         returns a string with a language sensitive representation of a number
+
+
+
+
+For example,
+// check if a is integer
+const a = 12;
+console.log(Number.isInteger(a)); // true
+
+// check if b is NaN
+const b = NaN;
+console.log(Number.isNaN(b)); // true
+
+// display upto two decimal point
+const d = 5.1234;
+console.log(d.toFixed(2)); // 5.12
+
+
+
+
+JavaScript Number Properties:
+
+Here is a list of Number properties in JavaScript.
+
+
+Property              Description
+EPSILON               returns the smallest interval between two representable numbers
+MAX_SAFE_INTEGER      returns the maximum safe integer
+MAX_VALUE             returns the largest possible value
+MIN_SAFE_INTEGER      returns the minimum safe integer
+MIN_VALUE             returns the smallest possible value
+NaN                   represents 'Not-a-Number' value
+NEGATIVE_INFINITY     represents negative infinity
+POSITIVE_INFINITY     represents positive infinity
+prototype             allows the addition of properties to Number objects
+
+
+
+
+
+For example,
+
+// largest possible value
+const a = Number.MAX_VALUE;
+console.log(a); // 1.7976931348623157e+308
+
+// maximum safe integer
+const a = Number.MAX_SAFE_INTEGER;
+console.log(a); // 9007199254740991
+
+
+
+
+JavaScript Number() Function:
+
+-> The Number() function is used to convert various data types to numbers. 
+
+For example,
+const a = '23'; // string
+const b = true; // boolean
+
+
+//converting to number
+const result1 = Number(a);
+const result2 = Number(b);
+console.log(result1); // 23
+console.log(result2); // 1
+
+
+
+
+JavaScript Symbol:
+
+-> The JavaScript ES6 introduced a new primitive data type called Symbol. 
+
+-> Symbols are immutable (cannot be changed) and are unique. 
+
+
+For example,
+// two symbols with the same description
+const value1 = Symbol('hello');
+const value2 = Symbol('hello');
+console.log(value1 === value2); // false
+
+
+-> Though value1 and value2 both contain the same description, they are different.
+
+
+
+
+Creating Symbol:
+
+-> You use the Symbol() function to create a Symbol. 
+
+For example,
+// creating symbol
+const x = Symbol()
+typeof x; // symbol
+
+
+-> You can pass an optional string as its description. 
+
+For example,
+const x = Symbol('hey');
+console.log(x); // Symbol(hey)
+
+
+
+Access Symbol Description:
+
+-> To access the description of a symbol, we use the . operator. 
+
+For example,
+const x = Symbol('hey');
+console.log(x.description); // hey
+
+
+
+
+Add Symbol as an Object Key:
+
+-> You can add symbols as a key in an object using square brackets []. 
+
+For example,
+let id = Symbol("id");
+let person = {
+ name: "Jack",
+ // adding symbol as a key
+ [id]: 123 // not "id": 123
+};
+console.log(person); // {name: "Jack", Symbol(id): 123}
+
+
+
+
+Symbols are not included in for...in Loop:
+
+-> The for...in loop does not iterate over Symbolic properties. 
+
+For example,
+let id = Symbol("id");
+let person = {
+ name: "Jack",
+ age: 25,
+ [id]: 12
+};
+// using for...in
+for (let key in person) {
+ console.log(key);
+}
+
+
+Output:
+name
+age
+
+
+
+
+Benefit of Using Symbols in Object:
+
+-> If the same code snippet is used in various programs, then it is better to use Symbols in the object key. 
+-> It's because you can use the same key name in different codes and avoid duplication issues. 
+
+
+For example,
+let person = {
+ name: "Jack"
+};
+
+// creating Symbol
+let id = Symbol("id");
+
+// adding symbol as a key
+person[id] = 12;
+
+
+
+
+-> In the above program, if the person object is also used by another program, 
+       then you wouldn't want to add a property that can be accessed or changed by another program. 
+       
+-> Hence by using Symbol, you create a unique property that you can use.
+
+-> Now, if the other program also needs to use a property named id, just add a Symbol named id and there won't be duplication issues. 
+
+
+For example,
+let person = {
+ name: "Jack"
+};
+let id = Symbol("id");
+person[id] = "Another value";
+
+
+
+
+-> In the above program, even if the same name is used to store values, the Symboldata type will have a unique value.
+
+-> In the above program, if the string key was used, then the later program would have changed the value of the property. 
+
+
+For example,
+let person = {
+ name: "Jack"
+};
+
+// using string as key
+person.id = 12;
+console.log(person.id); // 12
+
+
+
+
+
+// Another program overwrites value
+person.id = 'Another value';
+console.log(person.id); // Another value
+
+-> In the above program, the second user.id overwrites the previous value.
+
+
+
+
+Symbol Methods;
+
+-> There are various methods available with Symbol.
+
+
+Method        Description
+for()         Searches for existing symbols
+keyFor()      Returns a shared symbol key from the global symbol registry.
+toSource()    Returns a string containing the source of the Symbol object
+toString()    Returns a string containing the description of the Symbol
+valueOf()     Returns the primitive value of the Symbol object.
+
+
+
+
+Example: Symbol Methods
+
+// get symbol by name
+let sym = Symbol.for('hello');
+let sym1 = Symbol.for('id');
+
+// get name by symbol
+console.log( Symbol.keyFor(sym) ); // hello
+console.log( Symbol.keyFor(sym1) ); // id
+
+
+
+
+Symbol Properties:
+
+Properties               Description
+asyncIterator            Returns the default AsyncIterator for an object
+hasInstance              Determines if a constructor object recognizes an object as its instance
+isConcatSpreadable       Indicates if an object should be flattened to its array elements
+iterator                 Returns the default iterator for an object
+match                    Matches against a string
+matchAll                 Returns an iterator that yields matches of the regular expression against a string
+replace                  Replaces matched substrings of a string
+search                   Returns the index within a string that matches the regular expression             
+split                    Splits a string at the indices that match a regular expression
+species                  Creates derived objects
+toPrimitive              Converts an object to a primitive value
+toStringTag              Gives the default description of an object
+description              Returns a string containing the description of the symbol
+
+
+
+
+
+Example: Symbol Properties Example
+
+const x = Symbol('hey');
+
+// description property
+console.log(x.description); // hey
+const stringArray = ['a', 'b', 'c'];
+const numberArray = [1, 2, 3];
+
+// isConcatSpreadable property
+numberArray[Symbol.isConcatSpreadable] = false;
+let result = stringArray.concat(numberArray);
+console.log(result); // ["a", "b", "c", [1, 2, 3]]
 
 
 
