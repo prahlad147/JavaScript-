@@ -5992,67 +5992,1805 @@ Benefit of Using Module
 
 
 
+JavaScript ES6:
+
+-> JavaScript ES6 (also known as ECMAScript 2015 or ECMAScript 6) is the newer version of JavaScript that was introduced in 2015.
+-> ECMAScript is the standard that JavaScript programming language uses. 
+
+-> ECMAScript provides the specification on how JavaScript programming language should work.
+
+
+
+
+JavaScript let:
+
+-> JavaScript let is used to declare variables. 
+
+-> Previously, variables were declared using the var keyword.
+
+
+-> The variables declared using let are block-scoped. 
+-> This means they are only accessible within a particular block. 
+
+
+For example,
+// variable declared using let
+let name = 'Sara';
+{
+ // can be accessed only inside
+ let name = 'Peter';
+ console.log(name); // Peter
+}
+console.log(name); // Sara 
+
+
+
+
+JavaScript const:
+
+-> The const statement is used to declare constants in JavaScript. 
+
+For example,
+// name declared with const cannot be changed
+const name = 'Sara';
+
+-> Once declared, you cannot change the value of a const variable.
+
+
+
+
+JavaScript Arrow Function:
+
+-> In the ES6 version, you can use arrow functions to create function expressions. 
+
+For example,
+This function
+
+// function expression
+let x = function(x, y) {
+ return x * y;
+}
+can be written as
+
+// function expression using arrow function
+let x = (x, y) => x * y;
+
+
+
+
+JavaScript Classes:
+
+-> JavaScript class is used to create an object. 
+-> Class is similar to a constructor function. 
+
+
+For example,
+class Person {
+ constructor(name) {
+ this.name = name;
+ }
+}
+
+-> Keyword class is used to create a class. 
+-> The properties are assigned in a constructor function.
+-> Now you can create an object. 
+
+For example,
+class Person {
+ constructor(name) {
+ this.name = name;
+ }
+}
+const person1 = new Person('John');
+console.log(person1.name); // John
+
+
+
+Default Parameter Values:
+
+-> In the ES6 version, you can pass default values in the function parameters. 
+
+For example,
+function sum(x, y = 5) {
+ // take sum
+ // the value of y is 5 if not passed
+ console.log(x + y);
+}
+sum(5); // 10
+sum(5, 15); // 20
+
+
+-> In the above example, if you don't pass the parameter for y, it will take 5 by default.
+
+
+
+
+JavaScript Template Literals:
+
+-> The template literal has made it easier to include variables inside a string. 
+
+For example, 
+
+before you had to do:
+const first_name = "Jack";
+const last_name = "Sparrow";
+console.log('Hello ' + first_name + ' ' + last_name);
+
+
+This can be achieved using template literal by:
+const first_name = "Jack";
+const last_name = "Sparrow";
+console.log(`Hello ${first_name} ${last_name}`);
+
+
+
+
+JavaScript Destructuring:
+
+-> The destructuring syntax makes it easier to assign values to a new variable. 
+
+
+For example,
+// before you would do something like this
+const person = {
+ name: 'Sara',
+ age: 25,
+ gender: 'female' 
+}
+
+let name = person.name;
+let age = person.age;
+let gender = person.gender;
+console.log(name); // Sara
+console.log(age); // 25
+console.log(gender); // female
+
+
+
+
+Using ES6 Destructuring syntax, the above code can be written as:
+
+const person = {
+ name: 'Sara',
+ age: 25,
+ gender: 'female' 
+}
+let { name, age, gender } = person;
+console.log(name); // Sara
+console.log(age); // 25
+console.log(gender); // female
+
+
+
+
+JavaScript import and export:
+
+-> You could export a function or a program and use it in another program by importing it. 
+-> This helps to make reusable components. 
+
+
+For example, 
+-> if you have two JavaScript files named contact.js and home.js.
+
+In contact.js file, you can export the contact() function:
+// export
+export default function contact(name, age) {
+ console.log(`The name is ${name}. And age is ${age}.`);
+}
+
+
+
+-> Then when you want to use the contact() function in another file, you can simply 
+import the function. For example, in home.js file:
+import contact from './contact.js';
+contact('Sara', 25);
+// The name is Sara. And age is 25
+
+
+
+
+JavaScript Promises:
+
+-> Promises are used to handle asynchronous tasks. 
+
+For example,
+
+// returns a promise
+let countValue = new Promise(function (resolve, reject) {
+ reject('Promise rejected'); 
+});
+
+// executes when promise is resolved successfully
+countValue.then(
+ function successValue(result) {
+ console.log(result); // Promise resolved
+ },
+)
+
+
+
+JavaScript Rest Parameter and Spread Operator:
+
+-> You can use the rest parameter to represent an indefinite number of arguments as an array. 
+
+For example,
+function show(a, b, ...args) {
+ console.log(a); // one
+ console.log(b); // two
+ console.log(args); // ["three", "four", "five", "six"]
+}
+show('one', 'two', 'three', 'four', 'five', 'six')
+
+
+-> You pass the remaining arguments using ... syntax. 
+-> Hence, the name rest parameter.
+
+-> You use the spread syntax ... to copy the items into a single array. 
+
+For example,
+let arr1 = ['one', 'two'];
+let arr2 = [...arr1, 'three', 'four', 'five'];
+console.log(arr2); // ["one", "two", "three", "four", "five"]
+
+
+-> Both the rest parameter and the spread operator use the same syntax. 
+
+-> However, the spread operator is used with arrays (iterable values).
+
+
+
+
+JavaScript Arrow Function:
+
+-> Arrow function is one of the features introduced in the ES6 version of JavaScript. 
+-> It allows you to create functions in a cleaner way compared to regular functions. 
+
+
+For example,
+This function
+
+// function expression
+let x = function(x, y) {
+ return x * y;
+}
+can be written as
+
+// using arrow functions
+let x = (x, y) => x * y;
+using an arrow function.
+
+
+
+
+Arrow Function Syntax:
+
+The syntax of the arrow function is:
+let myFunction = (arg1, arg2, ...argN) => {
+ statement(s)
+}
+
+Here,
+• myFunction is the name of the function
+• arg1, arg2, ...argN are the function arguments
+• statement(s) is the function body
+
+-> If the body has single statement or expression, you can write arrow function as:
+let myFunction = (arg1, arg2, ...argN) => expression
+
+
+
+
+Example 1: Arrow Function with No Argument
+
+-> If a function doesn't take any argument, then you should use empty parentheses. 
+
+For example,
+let greet = () => console.log('Hello');
+greet(); // Hello
+
+
+Example 2: Arrow Function with One Argument
+
+-> If a function has only one argument, you can omit the parentheses. 
+
+For example,
+let greet = x => console.log(x);
+greet('Hello'); // Hello 
+
+
+
+
+Example 3: Arrow Function as an Expression
+
+-> You can also dynamically create a function and use it as an expression. 
+
+For example,
+let age = 5;
+let welcome = (age < 18) ?
+ () => console.log('Baby') :
+ () => console.log('Adult');
+welcome(); // Baby
+
+
+
+Example 4: Multiline Arrow Functions
+
+-> If a function body has multiple statements, you need to put them inside curly brackets {}. 
+
+For example,
+let sum = (a, b) => {
+ let result = a + b;
+ return result;
+}
+let result1 = sum(5,7);
+console.log(result1); // 12
+
+
+
+
+this with Arrow Function:
+
+-> Inside a regular function, this keyword refers to the function where it is called.
+-> However, this is not associated with arrow functions. 
+-> Arrow function does not have its own this. 
+-> So whenever you call this, it refers to its parent scope. 
+
+For example,
+Inside a regular function
+function Person() {
+ this.name = 'Jack',
+ this.age = 25,
+ this.sayName = function () {
+ // this is accessible
+ console.log(this.age);
+ function innerFunc() {
+ // this refers to the global object
+ console.log(this.age);
+ console.log(this);
+ }
+ innerFunc();
+ }
+}
+let x = new Person();
+x.sayName();
+
+
+Output:
+25
+undefined
+Window {}
+
+
+
+
+-> Here, this.age inside this.sayName() is accessible because this.sayName() is the method of an object.
+-> However, innerFunc() is a normal function and this.age is not accessible because this refers to the global object (Window object in the browser). 
+-> Hence, this.age inside the innerFunc() function gives undefined.
+
+
+
+Inside an arrow function:
+
+function Person() {
+ this.name = 'Jack',
+ this.age = 25,
+ this.sayName = function () {
+ console.log(this.age);
+ let innerFunc = () => {
+ console.log(this.age);
+ }
+ innerFunc();
+ }
+}
+const x = new Person();
+x.sayName();
+
+Output:
+25
+25
+
+
+-> Here, the innerFunc() function is defined using the arrow function. 
+-> And inside the arrow function, this refers to the parent's scope. Hence, this.age gives 25.
+
+
+
+
+Arguments Binding:
+
+-> Regular functions have arguments binding. 
+-> That's why when you pass arguments to a regular function, you can access them using the arguments keyword. 
+
+For example,
+let x = function () {
+ console.log(arguments);
+}
+x(4,6,7); // Arguments [4, 6, 7]
+
+
+
+-> Arrow functions do not have arguments binding.
+-> When you try to access an argument using the arrow function, it will give an error. 
+
+For example,
+let x = () => {
+ console.log(arguments);
+}
+x(4,6,7); 
+// ReferenceError: Can't find variable: arguments
+
+
+
+
+-> To solve this issue, you can use the spread syntax. 
+
+For example,
+let x = (...n) => {
+ console.log(n);
+}
+x(4,6,7); // [4, 6, 7]
+
+
+
+
+Arrow Function with Promises and Callbacks:
+
+-> Arrow functions provide better syntax to write promises and callbacks. 
+
+For example,
+
+// ES5
+asyncFunction().then(function() {
+ return asyncFunction1();
+}).then(function() {
+ return asyncFunction2();
+}).then(function() {
+ finish;
+});
+can be written as
+
+// ES6
+asyncFunction()
+.then(() => asyncFunction1())
+.then(() => asyncFunction2())
+.then(() => finish);
+
+
+
+
+Things You Should Avoid With Arrow Functions:
+
+
+1. You should not use arrow functions to create methods inside objects.
+
+let person = {
+ name: 'Jack',
+ age: 25,
+ sayName: () => {
+ // this refers to the global .....
+ //
+ console.log(this.age);
+ }
+}
+person.sayName(); // undefined
+
+
+2. You cannot use an arrow function as a constructor. 
+
+For example,
+let Foo = () => {};
+let foo = new Foo(); // TypeError: Foo is not a constructor
+
+
+Notes: 
+-> Arrow functions were introduced in ES6. 
+-> Some browsers may not support the use of arrow functions.
+
+
+
+
+JavaScript Default Parameters:
+
+-> The concept of default parameters is a new feature introduced in the ES6 version of JavaScript. 
+-> This allows us to give default values to function parameters. 
+
+Let's take an example,
+function sum(x = 3, y = 5) {
+ // return sum
+ return x + y;
+}
+console.log(sum(5, 15)); // 20 
+console.log(sum(7)); // 12
+console.log(sum()); // 8
+
+
+
+
+In the above example, the default value of x is 3 and the default value of y is 5.
+• sum(5, 15) - When both arguments are passed, x takes 5 and y takes 15.
+• sum(7) - When 7 is passed to the sum() function, x takes 7 and y takes default value 5.
+• sum() - When no argument is passed to the sum() function, x takes default value 3 and y takes default value 5.
+
+
+
+
+Using Expressions as Default Values:
+
+-> It is also possible to provide expressions as default values.
+
+
+Example 1: Passing Parameter as Default Values
+function sum(x = 1, y = x, z = x + y) {
+ console.log( x + y + z );
+}
+sum(); // 4
+
+
+In the above program,
+• The default value of x is 1
+• The default value of y is set to x parameter
+• The default value of z is the sum of x and y
+
+
+
+
+-> If you reference the parameter that has not been initialized yet, you will get an error. 
+
+For example,
+function sum( x = y, y = 1 ) {
+ console.log( x + y);
+}
+sum(); 
+
+Output:
+ReferenceError: Cannot access 'y' before initialization
+
+
+
+
+Example 2: Passing Function Value as Default Value
+
+// using a function in default value expression
+const sum = () => 15;
+const calculate = function( x, y = x * sum() ) {
+ return x + y;
+}
+const result = calculate(10);
+console.log(result); // 160
+
+
+In the above program,
+• 10 is passed to the calculate() function.
+• x becomes 10, and y becomes 150 (the sum function returns 15).
+• The result will be 160.
+
+
+
+
+Passing undefined Value:
+
+-> In JavaScript, when you pass undefined to a default parameter function, the function takes the default value. 
+
+For example,
+function test(x = 1) {
+ console.log(x);
+}
+// passing undefined
+// takes default value 1
+test(undefined); // 1
+
+
+
+
+JavaScript Template Literals (Template Strings):
+
+-> Template literals (template strings) allow you to use strings or embedded expressions in the form of a string. 
+-> They are enclosed in backticks ``. 
+
+For example,
+const name = 'Jack';
+console.log(`Hello ${name}!`); // Hello Jack!
+
+
+Notes: 
+-> Template literal was introduced in 2015 (also known as ECMAScript 6 or ES6 or ECMAScript 2015). 
+-> Some browsers may not support the use of template literals.
+
+
+
+
+Template Literals for Strings:
+
+-> In the earlier versions of JavaScript, you would use a single quote '' or a double quote "" for strings. 
+
+For example,
+const str1 = 'This is a string';
+
+// cannot use the same quotes
+const str2 = 'A "quote" inside a string'; // valid code
+const str3 = 'A 'quote' inside a string'; // Error
+const str4 = "Another 'quote' inside a string"; // valid code
+const str5 = "Another "quote" inside a string"; // Error
+
+-> To use the same quotations inside the string, you can use the escape character \.
+
+
+// escape characters using \
+const str3 = 'A \'quote\' inside a string'; // valid code
+const str5 = "Another \"quote\" inside a string"; // valid code
+
+
+-> Instead of using escape characters, you can use template literals. For example,
+const str1 = `This is a string`;
+const str2 = `This is a string with a 'quote' in it`;
+const str3 = `This is a string with a "double quote" in it`;
+
+
+
+-> As you can see, the template literals not only make it easy to include quotations but also make our code look cleaner.
+
+
+
+Multiline Strings Using Template Literals:
+
+-> Template literals also make it easy to write multiline strings. 
+
+For example,
+Using template literals, you can replace
+
+// using the + operator
+const message1 = 'This is a long message\n' + 
+'that spans across multiple lines\n' + 
+'in the code.'
+console.log(message1)
+with
+const message1 = `This is a long message
+that spans across multiple lines
+in the code.`
+console.log(message1)
+
+
+-> The output of both these programs will be the same.
+
+This is a long message
+that spans across multiple lines
+in the code.
+
+
+
+
+Expression Interpolation:
+
+-> Before JavaScript ES6, you would use the + operator to concatenate variables and expressions in a string. 
+
+For example,
+const name = 'Jack';
+console.log('Hello ' + name); // Hello Jack
+
+
+-> With template literals, it's a bit easier to include variables and expressions inside a string. 
+-> For that, we use the ${...} syntax.
+
+const name = 'Jack';
+console.log(`Hello ${name}`); 
+
+// template literals used with expressions
+const result = `The sum of 4 + 5 is ${4 + 5}`;
+console.log(result); 
+console.log(`${result < 10 ? 'Too low': 'Very high'}`)
+
+
+Output:
+Hello Jack
+The sum of 4 + 5 is 9
+Very high
+
+
+-> The process of assigning variables and expressions inside the template literal is known as interpolation.
+
+
+
+Tagged Templates:
+
+-> Normally, you would use a function to pass arguments. 
+
+For example,
+function tagExample(strings) {
+ return strings;
+}
+
+// passing argument
+const result = tagExample('Hello Jack');
+console.log(result);
+
+
+-> However, you can create tagged templates (that behave like a function) using template literals. 
+-> You use tags that allow you to parse template literals with a function.
+
+-> Tagged template is written like a function definition. 
+-> However, you do not pass parentheses () when calling the literal. 
+
+For example,
+function tagExample(strings) {
+ return strings;
+}
+// creating tagged template
+const result = tagExample`Hello Jack`;
+console.log(result);
+
+
+Output:
+["Hello Jack"]
+
+
+
+
+-> An array of string values are passed as the first argument of a tag function. 
+-> You could also pass the values and expressions as the remaining arguments. 
+
+
+
+For example,
+const name = 'Jack';
+const greet = true;
+function tagExample(strings, nameValue) {
+ let str0 = strings[0]; // Hello
+ let str1 = strings[1]; // , How are you?
+ if(greet) {
+ return `${str0}${nameValue}${str1}`;
+ }
+}
+
+// creating tagged literal
+// passing argument name
+const result = tagExample`Hello ${name}, How are you?`;
+console.log(result);
+
+Output:
+Hello Jack, How are you?
+
+-> In this way, you can also pass multiple arguments in the tagged template.
 
 
 
 
 
+JavaScript Spread Operator:
+
+-> The spread operator is a new addition to the features available in the JavaScript ES6 version.
+
+-> The spread operator ... is used to expand or spread an iterable or an array. 
+
+
+For example,
+const arrValue = ['My', 'name', 'is', 'Jack'];
+console.log(arrValue); // ["My", "name", "is", "Jack"]
+console.log(...arrValue); // My name is Jack
+
+
+In this case, the code:
+console.log(...arrValue)
+
+is equivalent to:
+console.log('My', 'name', 'is', 'Jack');
+
+
+
+Copy Array Using Spread Operator:
+
+-> You can also use the spread syntax ... to copy the items into a single array. 
+
+
+For example,
+const arr1 = ['one', 'two'];
+const arr2 = [...arr1, 'three', 'four', 'five'];
+console.log(arr2); 
+
+Output:
+["one", "two", "three", "four", "five"]
+
+
+
+
+Clone Array Using Spread Operator:
+
+-> In JavaScript, objects are assigned by reference and not by values. 
+
+For example,
+let arr1 = [ 1, 2, 3];
+let arr2 = arr1;
+console.log(arr1); // [1, 2, 3]
+console.log(arr2); // [1, 2, 3]
+
+// append an item to the array
+arr1.push(4);
+console.log(arr1); // [1, 2, 3, 4]
+console.log(arr2); // [1, 2, 3, 4]
+
+
+-> Here, both variables arr1 and arr2 are referring to the same array. 
+-> Hence the change in one variable results in the change in both variables.
+
+
+-> However, if you want to copy arrays so that they do not refer to the same array, you can use the spread operator. 
+-> This way, the change in one array is not reflected in the other. 
+
+For example,
+let arr1 = [ 1, 2, 3];
+
+// copy using spread syntax
+let arr2 = [...arr1];
+console.log(arr1); // [1, 2, 3]
+console.log(arr2); // [1, 2, 3]
+
+// append an item to the array
+arr1.push(4);
+console.log(arr1); // [1, 2, 3, 4]
+console.log(arr2); // [1, 2, 3]
+
+
+
+
+Spread Operator with Object:
+
+-> You can also use the spread operator with object literals. 
+
+For example,
+const obj1 = { x : 1, y : 2 };
+const obj2 = { z : 3 };
+
+// add members obj1 and obj2 to obj3
+const obj3 = {...obj1, ...obj2};
+console.log(obj3); // {x: 1, y: 2, z: 3}
+
+-> Here, both obj1 and obj2 properties are added to obj3 using the spread operator.
+
+
+
+
+Rest Parameter:
+
+-> When the spread operator is used as a parameter, it is known as the rest parameter.
+-> You can also accept multiple arguments in a function call using the rest parameter. 
+
+
+For example,
+let func = function(...args) {
+ console.log(args);
+}
+func(3); // [3]
+func(4, 5, 6); // [4, 5, 6]
+
+
+Here,
+• When a single argument is passed to the func() function, the rest parameter takes only one parameter.
+• When three arguments are passed, the rest parameter takes all three parameters.
+
+
+
+
+Notes: 
+-> Using the rest parameter will pass the arguments as array elements.
+-> You can also pass multiple arguments to a function using the spread operator. 
+
+
+For example,
+function sum(x, y ,z) {
+ console.log(x + y + z);
+}
+const num1 = [1, 3, 4, 5];
+sum(...num1); // 8
+
+
+-> If you pass multiple arguments using the spread operator, the function takes the required arguments and ignores the rest.
+
+
+Notes: 
+-> Spread operator was introduced in ES6. Some browsers may not support the use of spread syntax.
+
+
+
+
+JavaScript Map:
+
+-> The JavaScript ES6 has introduced two new data structures, i.e Map and WeakMap.
+-> Map is similar to objects in JavaScript that allows us to store elements in a key/value pair.
+-> The elements in a Map are inserted in an insertion order. 
+-> However, unlike an object, a map can contain objects, functions and other data types as key.
+
+
+
+Create JavaScript Map:
+To create a Map, we use the new Map() constructor. For example,
+
+// create a Map
+const map1 = new Map(); // an empty map
+console.log(map1); // Map {}
+
+
+
+
+Insert Item to Map:
+
+-> After you create a map, you can use the set() method to insert elements to it. 
+
+For example,
+
+// create a set
+let map1 = new Map();
+
+// insert key-value pair
+map1.set('info', {name: 'Jack', age: 26});
+console.log(map1); // Map {"info" => {name: "Jack", age: 26}}
+
+
+You can also use objects or functions as keys. 
+For example,
+
+// Map with object key
+let map2 = new Map();
+let obj = {};
+map2.set(obj, {name: 'Jack', age: "26"});
+console.log(map2); // Map {{} => {name: "Jack", age: "26"}}
 
 
 
 
 
+Access Map Elements:
+
+-> You can access Map elements using the get() method. 
+
+For example,
+let map1 = new Map();
+map1.set('info', {name: 'Jack', age: "26"});
+
+// access the elements of a Map
+console.log(map1.get('info')); // {name: "Jack", age: "26"}
+
+
+
+
+Check Map Elements:
+
+-> You can use the has() method to check if the element is in a Map. 
+
+For example,
+const set1 = new Set([1, 2, 3]);
+let map1 = new Map();
+map1.set('info', {name: 'Jack', age: "26"});
+
+// check if an element is in Set
+console.log(map1.has('info')); // true
+
+
+
+
+Removing Elements:
+
+-> You can use the clear() and the delete() method to remove elements from a Map.
+-> The delete() method returns true if a specified key/value pair exists and has been removed or else returns false. 
+
+For example,
+let map1 = new Map();
+map1.set('info', {name: 'Jack', age: "26"});
+
+// removing a particular element
+map1.delete('address'); // false
+console.log(map1); // Map {"info" => {name: "Jack", age: "26"}} 
+
+map1.delete('info'); // true
+console.log(map1); // Map {}
+
+
+
+
+-> The clear() method removes all key/value pairs from a Map object. 
+
+For example,
+let map1 = new Map();
+map1.set('info', {name: 'Jack', age: "26"});
+
+// removing all element
+map1.clear(); // false
+console.log(map1); // Map {}
+
+
+
+
+JavaScript Map Size:
+
+-> You can get the number of elements in a Map using the size property. 
+
+For example,
+let map1 = new Map();
+map1.set('info', {name: 'Jack', age: "26"});
+console.log(map1.size); // 1
+
+
+
+
+Iterate Through a Map:
+
+-> You can iterate through the Map elements using the for...of loop or forEach() method. 
+-> The elements are accessed in the insertion order. 
+
+For example,
+let map1 = new Map();
+map1.set('name', 'Jack');
+map1.set('age', '27');
+// looping through Map
+for (let [key, value] of map1) {
+ console.log(key + '- ' + value);
+}
+
+Output:
+name- Jack
+age- 27
+
+
+
+
+-> You could also get the same results as the above program using the forEach() method. 
+
+For example,
+// using forEach method()
+let map1 = new Map();
+map1.set('name', 'Jack');
+map1.set('age', '27');
+
+// looping through Map
+map1.forEach(function(value, key) {
+ console.log(key + '- ' + value)
+})
+
+
+
+
+Iterate Over Map Keys:
+
+-> You can iterate over the Map and get the key using the keys() method. 
+
+For example,
+
+let map1 = new Map();
+map1.set('name', 'Jack');
+map1.set('age', '27');
+
+// looping through the Map
+for (let key of map1.keys()) {
+ console.log(key)
+}
+
+
+Output:
+name
+age
+
+
+
+
+Iterate Over Map Values:
+
+-> You can iterate over the Map and get the values using the values() method. 
+
+For example,
+let map1 = new Map();
+map1.set('name', 'Jack');
+map1.set('age', '27');
+
+// looping through the Map
+for (let values of map1.values()) {
+ console.log(values);
+}
+
+Output:
+Jack
+27
+
+
+
+
+Get Key/Values of Map:
+
+-> You can iterate over the Map and get the key/value of a Map using the entries() method. 
+
+For example,
+let map1 = new Map();
+map1.set('name', 'Jack');
+map1.set('age', '27');
+
+// looping through the Map
+for (let elem of map1.entries()) {
+ console.log(`${elem[0]}: ${elem[1]}`);
+}
+
+Output:
+name: Jack
+age: 27
+
+
+
+
+JavaScript Map vs Object
+
+
+-> Maps can contain objects and other data types as keys.
+-> Objects can only contain strings and symbols as keys.
+-> Maps can be directly iterated and their value can be accessed.
+-> Objects can be iterated by accessing its keys.
+-> The number of elements of a Map can be determined by size property.
+-> The number of elements of an object needs to be determined manually.
+
+-> Map performs better for programs that require the addition or removal of elements frequently.
+
+-> Object does not perform well if the program requires the addition or removal of elements frequently.
 
 
 
 
 
+JavaScript WeakMap:
+
+-> The WeakMap is similar to a Map. 
+-> However, WeakMap can only contain objects as keys.
+
+For example,
+const weakMap = new WeakMap();
+console.log(weakMap); // WeakMap {} 
+let obj = {};
+
+// adding object (element) to WeakMap
+weakMap.set(obj, 'hello');
+console.log(weakMap); // WeakMap {{} => "hello"}
+
+
+
+-> When you try to add other data types besides objects, WeakMap throws an error. 
+
+For example,
+const weakMap = new WeakMap();
+
+// adding string as a key to WeakMap
+weakMap.set('obj', 'hello');
+
+// throws error
+// TypeError: Attempted to set a non-object key in a WeakMap
+
+
+
+
+WeakMap Methods:
+
+-> WeakMaps have methods get(), set(), delete(), and has(). 
+
+For example,
+const weakMap = new WeakMap();
+console.log(weakMap); // WeakMap {} 
+let obj = {};
+
+// adding object (element) to WeakMap
+weakMap.set(obj, 'hello');
+console.log(weakMap); // WeakMap {{} => "hello"}
+
+// get the element of a WeakMap
+console.log(weakMap.get(obj)); // hello
+
+// check if an element is present in WeakMap
+console.log(weakMap.has(obj)); // true
+
+// delete the element of WeakMap
+console.log(weakMap.delete(obj)); // true
+console.log(weakMap); // WeakMap {} 
+
+
+
+
+WeakMaps Are Not iterable:
+
+Unlike Maps, WeakMaps are not iterable. 
+
+
+For example,
+const weakMap = new WeakMap();
+console.log(weakMap); // WeakMap {} 
+let obj = {};
+
+// adding object (element) to WeakMap
+weakMap.set(obj, 'hello');
+
+// looping through WeakMap
+for (let i of weakMap) {
+ console.log(i); // TypeError
+}
+
+-> JavaScript Map and WeakMap were introduced in ES6. 
+-> Some browsers may not support their use.
+
+
+
+
+JavaScript Set and WeakSet:
+
+-> The JavaScript ES6 has introduced two new data structures, i.e Set and WeakSet.
+-> Set is similar to an array that allows us to store multiple items like numbers, strings, objects, etc. 
+
+-> However, unlike an array, a set cannot contain duplicate values.
+
+
+
+Create JavaScript Set:
+
+-> To create a Set, you need to use the new Set() constructor. 
+
+For example,
+// create Set
+const set1 = new Set(); // an empty set
+console.log(set1); // Set {}
+
+// Set with multiple types of value
+const set2 = new Set([1, 'hello', {count : true}]);
+console.log(set2); // Set {1, "hello", {count: true}}
+
+
+-> When duplicate values are passed to a Set object, the duplicate values are excluded.
+
+
+// Set with duplicate values
+const set3 = new Set([1, 1, 2, 2]);
+console.log(set3); // Set {1, 2}
+
+
+
+
+Access Set Elements:
+
+-> You can access Set elements using the values() method and check if there is an element inside Set using has() method. 
+
+For example,
+
+const set1 = new Set([1, 2, 3]);
+
+// access the elements of a Set
+console.log(set1.values()); // Set Iterator [1, 2, 3]
+
+
+-> You can use the has() method to check if the element is in a Set. 
+
+For example,
+const set1 = new Set([1, 2, 3]);
+
+// check if an element is in Set
+console.log(set1.has(1));
 
 
 
 
 
+Adding New Elements:
+
+-> You can add elements to a Set using the add() method. 
+
+For example,
+const set = new Set([1, 2]);
+console.log(set.values());
+
+// adding new elements
+set.add(3);
+console.log(set.values());
+
+// adding duplicate elements
+// does not add to Set
+set.add(1);
+console.log(set.values());
+
+
+Output:
+Set Iterator [1, 2]
+Set Iterator [1, 2, 3]
+Set Iterator [1, 2, 3]
 
 
 
 
+Removing Elements:
+
+-> You can use the clear() and the delete() method to remove elements from a Set.
+-> The delete() method removes a specific element from a Set. 
+
+For example,
+const set = new Set([1, 2, 3]);
+console.log(set.values()); // Set Iterator [1, 2, 3]
+
+// removing a particular element
+set.delete(2);
+console.log(set.values()); // Set Iterator [1, 3]
+
+
+-> The clear() method removes all elements from a Set. 
+
+For example,
+const set = new Set([1, 2, 3]);
+console.log(set.values()); // Set Iterator [1, 2, 3]
+
+// remove all elements of Set
+set.clear();
+console.log(set.values()); // Set Iterator []
 
 
 
 
+Iterate Sets:
+
+-> You can iterate through the Set elements using the for...of loop or forEach() method. 
+-> The elements are accessed in the insertion order. 
+
+For example,
+const set = new Set([1, 2, 3]);
+// looping through Set
+for (let i of set) {
+ console.log(i);
+}
+
+Output:
+1
+2
+3
 
 
 
 
+JavaScript WeakSet:
+
+-> The WeakSet is similar to a Set. 
+-> However, WeakSet can only contain objects whereas a Set can contain any data types such as strings, numbers, objects, etc. 
+
+
+For example,
+const weakSet = new WeakSet();
+console.log(weakSet); // WeakSet {}
+let obj = {
+ message: 'Hi',
+ sendMessage: true
+}
+
+// adding object (element) to WeakSet
+weakSet.add(obj);
+console.log(weakSet); // WeakSet {{message: "Hi", sendMessage: true}}
 
 
 
 
+-> When you try to add other data types besides objects, WeakSet throws an error. 
+
+
+For example,
+// trying to add string to WeakSet
+weakSet.add('hello');
+// throws error
+// TypeError: Attempted to add a non-object key to a WeakSet
+console.log(weakSet);
 
 
 
 
+WeakSet Methods:
+
+-> WeakSets have methods add(), delete(), and has(). 
+
+For example,
+const weakSet = new WeakSet();
+console.log(weakSet); // WeakSet {}
+const obj = {a:1};
+
+// add to a weakSet
+weakSet.add(obj);
+console.log(weakSet); // WeakSet {{a: 1}}
+
+// check if an element is in Set
+console.log(weakSet.has(obj)); // true
+
+// delete elements
+weakSet.delete(obj);
+console.log(weakSet); // WeakSet {}
 
 
 
 
+WeakSets Are Not iterable:
+
+-> Unlike Sets, WeakSets are not iterable. 
+
+For example,
+const weakSet = new WeakSet({a:1});
+// looping through WeakSet
+for (let i of weakSet) {
+ // TypeError
+ console.log(i);
+}
 
 
 
 
+Mathematical Set Operations:
+
+-> In JavaScript, Set does not provide built-in methods for performing mathematical operations such as union, intersection, difference, etc. 
+-> However, we can create programs to perform those operations.
+
+
+Example: Set Union Operation
+// perform union operation
+// contain elements of both sets
+function union(a, b) {
+ let unionSet = new Set(a);
+ for (let i of b) {
+ unionSet.add(i);
+ }
+ return unionSet
+}
+
+// two sets of fruits
+let setA = new Set(['apple', 'mango', 'orange']);
+let setB = new Set(['grapes', 'apple', 'banana']);
+let result = union(setA, setB);
+console.log(result);
+
+
+Output:
+Set {"apple", "mango", "orange", "grapes", "banana"}
 
 
 
 
+Example: Set Intersection Operation
+
+// perform intersection operation
+// elements of set a that are also in set b
+function intersection(setA, setB) {
+ let intersectionSet = new Set();
+ for (let i of setB) {
+ if (setA.has(i)) {
+ intersectionSet.add(i);
+ }
+ }
+ return intersectionSet;
+}
+
+// two sets of fruits
+let setA = new Set(['apple', 'mango', 'orange']);
+let setB = new Set(['grapes', 'apple', 'banana']);
+let result = intersection(setA, setB);
+console.log(result);
+
+
+Output:
+Set {"apple"}
 
 
 
 
+Example: Set Difference Operation
+
+// perform difference operation
+// elements of set a that are not in set b
+function difference(setA, setB) {
+ let differenceSet = new Set(setA)
+ for (let i of setB) {
+ differenceSet.delete(i)
+ }
+ return differenceSet
+}
+
+// two sets of fruits
+let setA = new Set(['apple', 'mango', 'orange']);
+let setB = new Set(['grapes', 'apple', 'banana']);
+let result = difference(setA, setB);
+console.log(result);
+
+
+Output:
+Set {"mango", "orange"}
 
 
 
 
+Example: Set Subset Operation
 
+// perform subset operation
+// true if all elements of set b is in set a
+function subset(setA, setB) {
+ for (let i of setB) {
+ if (!setA.has(i)) {
+ return false
+ }
+ }
+ return true
+}
+
+// two sets of fruits
+let setA = new Set(['apple', 'mango', 'orange']);
+let setB = new Set(['apple', 'orange']);
+let result = subset(setA, setB);
+console.log(result);
+
+
+Output:
+true
+
+
+-> JavaScript Sets and WeakSets were introduced in ES6. 
+-> Some browsers may not support their use.
+
+
+
+
+JavaScript Destructuring Assignment:
+
+JavaScript Destructuring:
+
+-> The destructuring assignment introduced in ES6 makes it easy to assign array values and object properties to distinct variables. 
+
+For example,
+Before ES6:
+// assigning object attributes to variables
+const person = {
+ name: 'Sara',
+ age: 25,
+ gender: 'female' 
+}
+let name = person.name;
+let age = person.age;
+let gender = person.gender;
+console.log(name); // Sara
+console.log(age); // 25
+console.log(gender); // female
+
+
+From ES6:
+// assigning object attributes to variables
+const person = {
+ name: 'Sara',
+ age: 25,
+ gender: 'female' 
+}
+
+
+// destructuring assignment
+let { name, age, gender } = person;
+console.log(name); // Sara
+console.log(age); // 25
+console.log(gender); // female
+
+Notes: 
+-> The order of the name does not matter in object destructuring.
+
+For example, you could write the above program as:
+let { age, gender, name } = person;
+console.log(name); // Sara
+
+
+
+-> When destructuring objects, you should use the same name for the variable as the corresponding object key.
+
+For example,
+let {name1, age, gender} = person;
+console.log(name1); // undefined
+
+
+-> If you want to assign different variable names for the object key, you can use:
+const person = {
+ name: 'Sara',
+ age: 25,
+ gender: 'female' 
+}
+
+
+// destructuring assignment
+
+// using different variable names
+let { name: name1, age: age1, gender:gender1 } = person;
+console.log(name1); // Sara
+console.log(age1); // 25
+console.log(gender1); // female
+
+
+
+
+Array Destructuring:
+
+-> You can also perform array destructuring in a similar way. 
+
+For example,
+const arrValue = ['one', 'two', 'three'];
+
+// destructuring assignment in arrays
+const [x, y, z] = arrValue;
+console.log(x); // one
+console.log(y); // two
+console.log(z); // three
+
+
+
+Assign Default Values:
+
+-> You can assign the default values for variables while using destructuring. 
+
+
+For example,
+let arrValue = [10];
+
+// assigning default value 5 and 7
+let [x = 5, y = 7] = arrValue;
+console.log(x); // 10
+console.log(y); // 7
+
+
+In the above program, arrValue has only one element. Hence,
+• the x variable will be 10
+• the y variable takes the default value 7
+
+
+
+
+-> In object destructuring, you can pass default values in a similar way. 
+For example,
+const person = {
+ name: 'Jack',
+}
+// assign default value 26 to age if undefined
+const { name, age = 26} = person;
+console.log(name); // Jack
+console.log(age); // 26
+
+
+
+Swapping Variables:
+
+-> In this example, two variables are swapped using the destructuring assignment syntax.
+
+
+// program to swap variables
+let x = 4;
+let y = 7;
+
+// swapping variables
+[x, y] = [y, x];
+console.log(x); // 7
+console.log(y); // 4
+
+
+
+Skip Items:
+
+-> You can skip unwanted items in an array without assigning them to local variables. 
+
+For example,
+const arrValue = ['one', 'two', 'three'];
+
+// destructuring assignment in arrays
+const [x, , z] = arrValue;
+console.log(x); // one
+console.log(z); // three
+
+-> In the above program, the second element is omitted by using the comma separator ,.
+
+
+
+
+Assign Remaining Elements to a Single Variable:
+
+-> You can assign the remaining elements of an array to a variable using the spread syntax .... 
+
+For example,
+const arrValue = ['one', 'two', 'three', 'four'];
+
+// destructuring assignment in arrays
+// assigning remaining elements to y
+const [x, ...y] = arrValue;
+console.log(x); // one
+console.log(y); // ["two", "three", "four"]
+
+
+-> Here, one is assigned to the x variable. And the rest of the array elements are assigned to y variable.
+
+
+
+
+Assign Remaining Elements to a Single Variable:
+
+-> You can assign the remaining elements of an array to a variable using the spread syntax .... 
+
+For example,
+const arrValue = ['one', 'two', 'three', 'four'];
+
+// destructuring assignment in arrays
+// assigning remaining elements to y
+const [x, ...y] = arrValue;
+console.log(x); // one
+console.log(y); // ["two", "three", "four"]
+
+
+-> Here, one is assigned to the x variable. And the rest of the array elements are assigned to y variable.
+
+
+
+-> You can also assign the rest of the object properties to a single variable. 
+
+
+For example,
+const person = {
+ name: 'Sara',
+ age: 25,
+ gender: 'female' 
+}
+
+// destructuring assignment
+// assigning remaining properties to rest
+let { name, ...rest } = person;
+console.log(name); // Sara
+console.log(rest); // {age: 25, gender: "female"}
+
+
+
+
+Notes: 
+-> The variable with the spread syntax cannot have a trailing comma ,.
+-> You should use this rest element (variable with spread syntax) as the last variable.
+
+For example,
+const arrValue = ['one', 'two', 'three', 'four'];
+// throws an error
+const [ ...x, y] = arrValue;
+console.log(x); // error
+
+
+
+Nested Destructuring Assignment:
+
+-> You can perform nested destructuring for array elements. 
+
+For example,
+// nested array elements
+const arrValue = ['one', ['two', 'three']];
+
+// nested destructuring assignment in arrays
+const [x, [y, z]] = arrValue;
+console.log(x); // one
+console.log(y); // two
+console.log(z); // three
+
+
+
+-> Here, the variable y and z are assigned nested elements two and three.
+-> In order to execute the nested destructuring assignment, you have to enclose the variables in an array structure (by enclosing inside []).
+
+-> You can also perform nested destructuring for object properties. 
+
+For example,
+const person = {
+ name: 'Jack',
+ age: 26,
+ hobbies: {
+ read: true,
+ playGame: true
+ }
+}
+
+// nested destructuring 
+const {name, hobbies: {read, playGame}} = person;
+console.log(name); // Jack
+console.log(read); // true
+console.log(playGame); // true
+
+
+
+
+-> In order to execute the nested destructuring assignment for objects, you have to enclose the variables in an object structure (by enclosing inside {}).
+
+
+Notes: 
+-> Destructuring assignment feature was introduced in ES6. 
+-> Some browsers may not support the use of the destructuring assignment.
 
 
 
